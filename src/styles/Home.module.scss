@@ -97,6 +97,11 @@
         align-items: center;
 
         .content {
+
+            @media(max-width:$sm) {
+                text-align: center;
+            }
+
             h3 {
 
                 font-weight: 600;
