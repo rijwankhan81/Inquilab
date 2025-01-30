@@ -84,8 +84,8 @@ export default function Home() {
               </div>
               <div className={styles.content}>
                 <h3>
-                  Honorable Mayor, <span>Dr. Shahadat Hossain</span> Chittagong
-                  City Corporation
+                  <span>Dr. Shahadat Hossain</span>
+                  Honorable Mayor <br /> Chittagong City Corporation
                 </h3>
                 <p>
                   &#34;Chattogram is not just a city; it is the heartbeat of
