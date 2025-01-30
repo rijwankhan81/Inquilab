@@ -1,0 +1,30 @@
+@use "/src/styles/var" as *;
+
+.footer {
+    padding: 100px 0;
+    background: #000;
+
+    @media(max-width:$md) {
+        padding: 50px 0;
+    }
+
+    .head {
+        text-align: center;
+        color: #fff;
+        padding-bottom: 20px;
+    }
+
+    ul {
+        text-align: center;
+        list-style: none;
+
+        li {
+            color: #606060;
+
+            span {
+                font-weight: 900;
+                color: $primary;
+            }
+        }
+    }
+}

@@ -1,0 +1,57 @@
+import Link from "next/link";
+import styles from "./header.module.scss";
+import { Container } from "react-bootstrap";
+import { GiHamburgerMenu } from "react-icons/gi";
+import { useState } from "react";
+export default function Header() {
+  const [show, setShow] = useState(false);
+
+  const toggleClass = () => {
+    setShow((prevState) => !prevState);
+  };
+  return (
+    <>
+      <header className={styles.header}>
+        <div className={styles.wrapper}>
+          <Container className={styles.container}>
+            <div className={styles.nav}>
+              <div className={styles.logo}>
+                <h2>
+                  <Link href="/">Chattogram</Link>
+                </h2>
+              </div>
+              <ul className={`${show ? styles.show : ""} ${styles.menu}`}>
+                <li className={styles.navItem}>
+                  <Link className={styles.navLink} href="/e-services">
+                    e-Services
+                  </Link>
+                </li>
+                <li className={styles.navItem}>
+                  <Link className={styles.navLink} href="/#vision">
+                    Our Vision
+                  </Link>
+                </li>
+                <li className={styles.navItem}>
+                  <Link className={styles.navLink} href="/#key">
+                    Key Pillars
+                  </Link>
+                </li>
+                <li className={styles.navItem}>
+                  <Link className={styles.navLink} href="/#projects">
+                    Ongoing Projects
+                  </Link>
+                </li>
+              </ul>
+              <div className={styles.contact}>
+                <Link href="#contact">Contact</Link>
+              </div>
+              <div className={styles.hamMenu} onClick={toggleClass}>
+                <GiHamburgerMenu />
+              </div>
+            </div>
+          </Container>
+        </div>
+      </header>
+    </>
+  );
+}

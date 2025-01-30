@@ -1,0 +1,111 @@
+@use "/src/styles/var" as *;
+
+.header {
+    padding: 20px 0;
+    background: #fff;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    left: 0;
+    z-index: 10;
+    box-shadow: rgba(0, 0, 0, 0.06) 0px 10px 21.25px 3.75px;
+
+    .nav {
+        display: grid;
+        grid-template-columns: 1fr 3fr 1fr;
+        align-items: center;
+        position: relative;
+
+        @media(max-width:$lg) {
+            grid-template-columns: 1fr 1fr;
+        }
+
+        .logo {
+            h2 {
+                margin: 0;
+                text-transform: uppercase;
+                font-size: 24px;
+                font-weight: 900;
+                cursor: pointer;
+                color: $primary;
+
+                a {
+                    text-decoration: none;
+                }
+            }
+        }
+
+        .menu {
+            list-style: none;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            @media(max-width:$lg) {
+                flex-direction: column;
+                position: absolute;
+                top: 0;
+                right: 0;
+                background: #fff;
+                box-shadow: rgba(0, 0, 0, 0.06) 0px 10px 21.25px 3.75px;
+                align-items: flex-start;
+                padding: 15px 5px;
+                opacity: 0;
+                visibility: hidden;
+                transition: 0.25s ease;
+
+                li {
+                    width: 100%;
+                }
+            }
+
+            .navItem {
+                padding: 10px 15px;
+
+                .navLink {
+                    text-decoration: none;
+                    color: #000;
+                    font-weight: 500;
+                }
+            }
+        }
+
+        .contact {
+            text-align: end;
+
+            @media(max-width:$lg) {
+                display: none;
+            }
+
+            a {
+                display: inline-block;
+                text-decoration: none;
+                background: $primary;
+                color: #fff;
+                padding: 10px 20px;
+                border-radius: 10px;
+                font-weight: 700;
+            }
+        }
+
+        .show {
+
+            @media(max-width:$lg) {
+                opacity: 1;
+                visibility: visible;
+                top: 40px;
+            }
+        }
+    }
+
+
+
+    .hamMenu {
+        display: none;
+        text-align: end;
+
+        @media(max-width:$lg) {
+            display: block;
+        }
+    }
+}
