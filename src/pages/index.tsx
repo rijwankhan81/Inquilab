@@ -83,15 +83,16 @@ export default function Home() {
               <div className={styles.content}>
                 <h3>Mayor of Chattogram, [Name of Mayor]</h3>
                 <p>
-                  "Chattogram is not just a city; it is the heartbeat of
-                  Bangladesh's economy and a symbol of resilience and progress.
-                  As we embark on this ambitious journey to transform our city
-                  into a smart and sustainable urban center, I am committed to
-                  ensuring that every citizen benefits from this transformation.
-                  Together, we will build a city that is not only
-                  technologically advanced but also environmentally responsible
-                  and socially inclusive. Let us work hand in hand to create a
-                  brighter, greener, and smarter future for Chattogram."
+                  &#34;Chattogram is not just a city; it is the heartbeat of
+                  Bangladesh&#39;s economy and a symbol of resilience and
+                  progress. As we embark on this ambitious journey to transform
+                  our city into a smart and sustainable urban center, I am
+                  committed to ensuring that every citizen benefits from this
+                  transformation. Together, we will build a city that is not
+                  only technologically advanced but also environmentally
+                  responsible and socially inclusive. Let us work hand in hand
+                  to create a brighter, greener, and smarter future for
+                  Chattogram.&#34;
                 </p>
               </div>
             </div>
