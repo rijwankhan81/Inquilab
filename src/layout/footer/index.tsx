@@ -12,7 +12,7 @@ export default function Footer() {
           </div>
           <ul>
             <li>
-              <span>Email</span>: info@smartchattogram.gov.bd
+              <span>Email</span>: info@smartctg.gov.bd
             </li>
             <li>
               <span>Phone</span>: +880-XXX-XXXXXXX
