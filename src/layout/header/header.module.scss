@@ -18,6 +18,13 @@
 
         @media(max-width:$lg) {
             grid-template-columns: 1fr 1fr;
+
+            .btns {
+                display: flex;
+                align-items: center;
+                justify-content: end;
+                gap: 20px;
+            }
         }
 
         .logo {
@@ -28,6 +35,10 @@
                 font-weight: 900;
                 cursor: pointer;
                 color: $primary;
+
+                @media(max-width:$md) {
+                    font-size: 20px;
+                }
 
                 a {
                     text-decoration: none;
@@ -73,10 +84,6 @@
         .contact {
             text-align: end;
 
-            @media(max-width:$lg) {
-                display: none;
-            }
-
             a {
                 display: inline-block;
                 text-decoration: none;
@@ -85,6 +92,12 @@
                 padding: 10px 20px;
                 border-radius: 10px;
                 font-weight: 700;
+
+                @media(max-width:$lg) {
+                    font-size: 14px;
+                    padding: 8px 15px;
+                    border-radius: 8px;
+                }
             }
         }
 

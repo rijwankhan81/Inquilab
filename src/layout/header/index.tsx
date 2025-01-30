@@ -42,11 +42,13 @@ export default function Header() {
                   </Link>
                 </li>
               </ul>
-              <div className={styles.contact}>
-                <Link href="#contact">Contact</Link>
-              </div>
-              <div className={styles.hamMenu} onClick={toggleClass}>
-                <GiHamburgerMenu />
+              <div className={styles.btns}>
+                <div className={styles.contact}>
+                  <Link href="#contact">Contact</Link>
+                </div>
+                <div className={styles.hamMenu} onClick={toggleClass}>
+                  <GiHamburgerMenu />
+                </div>
               </div>
             </div>
           </Container>

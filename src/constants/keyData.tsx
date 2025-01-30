@@ -1,6 +1,6 @@
 export const data = [
   {
-    image: "/images/image3.jpg",
+    image: "/images/image6.jpg",
     title: "Smart Infrastructure",
     description: "Developing intelligent systems to improve urban living.",
     items: [
@@ -10,7 +10,7 @@ export const data = [
     ],
   },
   {
-    image: "/images/image3.jpg",
+    image: "/images/image7.jpg",
     title: "Digital Innovation",
     description: "Leveraging technology for a smarter city.",
     items: [
@@ -20,7 +20,7 @@ export const data = [
     ],
   },
   {
-    image: "/images/image3.jpg",
+    image: "/images/image8.jpg",
     title: "Sustainable Environment",
     description: "Creating a greener and cleaner urban ecosystem.",
     items: [
@@ -30,7 +30,7 @@ export const data = [
     ],
   },
   {
-    image: "/images/image3.jpg",
+    image: "/images/image9.jpg",
     title: "Economic Growth and Inclusivity",
     description: "Fostering a thriving and inclusive economy.",
     items: [
@@ -40,7 +40,7 @@ export const data = [
     ],
   },
   {
-    image: "/images/image3.jpg",
+    image: "/images/image10.jpg",
     title: "Resilient Urban Planning",
     description: "Designing cities to withstand future challenges.",
     items: [
