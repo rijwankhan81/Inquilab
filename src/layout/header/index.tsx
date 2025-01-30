@@ -22,8 +22,8 @@ export default function Header() {
               </div>
               <ul className={`${show ? styles.show : ""} ${styles.menu}`}>
                 <li className={styles.navItem}>
-                  <Link className={styles.navLink} href="/e-services">
-                    e-Services
+                  <Link className={styles.navLink} href="#contact">
+                    Contact
                   </Link>
                 </li>
                 <li className={styles.navItem}>
@@ -44,7 +44,9 @@ export default function Header() {
               </ul>
               <div className={styles.btns}>
                 <div className={styles.contact}>
-                  <Link href="#contact">Contact</Link>
+                  <Link className={styles.navLink} href="/e-services">
+                    e-Services
+                  </Link>
                 </div>
                 <div className={styles.hamMenu} onClick={toggleClass}>
                   <GiHamburgerMenu />

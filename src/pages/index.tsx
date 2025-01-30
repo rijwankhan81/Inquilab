@@ -19,17 +19,19 @@ export default function Home() {
       <Header />
       <main className={styles.page}>
         <section className={styles.banner}>
-          <video
-            className={styles.video}
-            width="640"
-            height="360"
-            autoPlay
-            loop
-            muted
-          >
-            <source src="/images/banner.mp4" type="video/mp4" />
-            Your browser does not support the video tag.
-          </video>
+          <Container>
+            <video
+              className={styles.video}
+              width="640"
+              height="360"
+              autoPlay
+              loop
+              muted
+            >
+              <source src="/images/banner.mp4" type="video/mp4" />
+              Your browser does not support the video tag.
+            </video>
+          </Container>
         </section>
         <section className={styles.welcome}>
           <Container className={styles.container}>
@@ -78,10 +80,13 @@ export default function Home() {
             </div>
             <div className={styles.row}>
               <div className={styles.image}>
-                <NextImage src={"/images/image5.png"} alt={""} />
+                <NextImage src={"/images/mayor.jpg"} alt={""} />
               </div>
               <div className={styles.content}>
-                <h3>Mayor of Chattogram, [Name of Mayor]</h3>
+                <h3>
+                  Honorable Mayor, <span>Dr. Shahadat Hossain</span> Chittagong
+                  City Corporation
+                </h3>
                 <p>
                   &#34;Chattogram is not just a city; it is the heartbeat of
                   Bangladesh&#39;s economy and a symbol of resilience and

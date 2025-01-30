@@ -1,3 +1,4 @@
+import Chatbot from "@/modules/chatBot";
 import styles from "./footer.module.scss";
 import { Container } from "react-bootstrap";
 export default function Footer() {
@@ -23,6 +24,7 @@ export default function Footer() {
           </ul>
         </Container>
       </footer>
+      <Chatbot />
     </>
   );
 }

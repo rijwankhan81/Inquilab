@@ -29,19 +29,30 @@
 
     .wrapper {
         display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+        grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
         gap: 20px;
+
+        @media(max-width:$sm) {
+            gap: 15px;
+            grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+        }
 
         .service {
             box-shadow: rgba(0, 0, 0, 0.06) 0px 10px 21.25px 3.75px;
             background: #fff;
             overflow: hidden;
             padding: 20px;
-            border: 1px solid $primary;
+            border-radius: 20px;
             text-align: center;
+            cursor: pointer;
+
+            @media(max-width:$sm) {
+                padding-top: 100px;
+                padding: 20px 10px;
+            }
 
             h3 {
-                font-size: 20px;
+                font-size: 16px;
                 font-weight: 900;
                 margin: 20px 0;
             }

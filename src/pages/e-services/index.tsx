@@ -34,7 +34,7 @@ export default function Home() {
                   <div className={styles.icon}>{service.icon}</div>
                   <div className={styles.content}>
                     <h3>{service.title}</h3>
-                    <p>{service.features}</p>
+                    {/* <p>{service.features}</p> */}
                   </div>
                 </div>
               ))}

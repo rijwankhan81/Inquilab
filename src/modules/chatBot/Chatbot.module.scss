@@ -1,0 +1,85 @@
+@use "/src/styles/var" as *;
+
+.chatContainer {
+    position: fixed;
+    right: 10px;
+    bottom: 100px;
+    z-index: 999;
+
+
+    .chatIcon {
+        background: $primary;
+        width: 50px;
+        height: 50px;
+        border: none;
+        border-radius: 100%;
+        margin-left: auto;
+        display: block;
+        margin-top: 20px;
+
+        svg {
+            color: #fff;
+        }
+    }
+}
+
+.chatbotContainer {
+    width: 300px;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+    background: #fff;
+    box-shadow: rgba(0, 0, 0, 0.06) 0px 10px 21.25px 3.75px;
+}
+
+.chatWindow {
+    flex: 1;
+    padding: 15px;
+    height: 300px;
+    overflow-y: auto;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.botMessage,
+.userMessage {
+    padding: 8px;
+    border-radius: 5px;
+    max-width: 80%;
+}
+
+.botMessage {
+    background-color: #f1f1f1;
+    align-self: flex-start;
+}
+
+.userMessage {
+    background-color: $primary;
+    color: white;
+    align-self: flex-end;
+}
+
+.inputContainer {
+    display: flex;
+    padding: 5px;
+    border-top: 1px solid #ccc;
+}
+
+.chatInput {
+    flex: 1;
+    padding: 5px;
+    border: none;
+    outline: none;
+}
+
+.sendButton {
+    padding: 5px 10px;
+    background-color: $primary;
+    color: white;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+}
