@@ -103,7 +103,7 @@ export default function Home() {
           <Container>
             <h2>Chattogram’s Progress Under Leadership</h2>
             <div className={styles.row}>
-              <div className={styles.videos}>
+              {/* <div className={styles.videos}>
                 <iframe
                   src="https://www.youtube.com/embed/ybYb819WuLo"
                   title="১১ বছর আগের খালেদা জিয়ার ভুমিকা মনে রেখেছেন ড. মুহাম্মদ ইউনূস? ইচ্ছা পূরণ হয়নি শেখ হাসিনার!"
@@ -112,7 +112,7 @@ export default function Home() {
                   referrerPolicy="strict-origin-when-cross-origin"
                   allowFullScreen
                 ></iframe>
-              </div>
+              </div> */}
               <div className={styles.videos}>
                 <iframe
                   src="https://www.youtube.com/embed/O4ctN7FdHQk"
