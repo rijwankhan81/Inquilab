@@ -1,14 +1,11 @@
 import { data } from "@/constants/keyData";
+import { ongoingProjects } from "@/constants/ongoingProjects";
 import NextImage from "@/hooks/NextImage";
 import Footer from "@/layout/footer";
 import Header from "@/layout/header";
 import styles from "@/styles/Home.module.scss";
 import Head from "next/head";
 import { Container } from "react-bootstrap";
-import { GiTrafficLightsRed } from "react-icons/gi";
-import { IoGlobe } from "react-icons/io5";
-import { LuTrees } from "react-icons/lu";
-import { TbSolarElectricity } from "react-icons/tb";
 
 export default function Home() {
   return (
@@ -37,10 +34,7 @@ export default function Home() {
           <Container className={styles.container}>
             <div className={styles.row}>
               <div className={styles.content}>
-                <h2>
-                  Welcome to the Future of Chattogram: A Smart and Sustainable
-                  City
-                </h2>
+                <h2>A Smart and Sustainable City</h2>
                 <p>
                   Chattogram, the bustling port city of Bangladesh, is on a
                   transformative journey to become a smart and sustainable urban
@@ -133,53 +127,17 @@ export default function Home() {
               <h2>Ongoing Projects</h2>
             </div>
             <div className={styles.row}>
-              <div className={styles.wrapper}>
-                <div className={styles.icon}>
-                  <GiTrafficLightsRed />
+              {ongoingProjects.map((category, index) => (
+                <div key={index} className={styles.wrapper}>
+                  <div className={styles.icon}>
+                    <h3>{category.icon}</h3>
+                  </div>
+                  <div className={styles.content}>
+                    <h3>{category.title}</h3>
+                    <p>{category.description}</p>
+                  </div>
                 </div>
-                <div className={styles.content}>
-                  <h3>Smart Traffic Management System</h3>
-                  <p>
-                    Reducing congestion and improving road safety through
-                    AI-powered traffic control.
-                  </p>
-                </div>
-              </div>
-              <div className={styles.wrapper}>
-                <div className={styles.icon}>
-                  <LuTrees />
-                </div>
-                <div className={styles.content}>
-                  <h3>Chattogram Green City Initiative</h3>
-                  <p>
-                    Planting 1 million trees and creating urban green belts.
-                  </p>
-                </div>
-              </div>
-              <div className={styles.wrapper}>
-                <div className={styles.icon}>
-                  <TbSolarElectricity />
-                </div>
-                <div className={styles.content}>
-                  <h3>Renewable Energy Adoption</h3>
-                  <p>
-                    Installing solar panels on public buildings and promoting
-                    rooftop solar for households.
-                  </p>
-                </div>
-              </div>
-              <div className={styles.wrapper}>
-                <div className={styles.icon}>
-                  <IoGlobe />
-                </div>
-                <div className={styles.content}>
-                  <h3>Digital Chattogram Platform</h3>
-                  <p>
-                    A one-stop portal for citizens to access government
-                    services, pay bills, and report issues.
-                  </p>
-                </div>
-              </div>
+              ))}
             </div>
           </Container>
         </section>

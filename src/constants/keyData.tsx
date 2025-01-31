@@ -49,4 +49,24 @@ export const data = [
       "Integrating smart water management systems to ensure sustainable water use.",
     ],
   },
+  {
+    image: "/images/image11.jpg",
+    title: "Licensing System",
+    description: "Simplifying and modernizing licensing processes.",
+    items: [
+      "Streamlining the process for business licenses, vehicle registrations, and construction permits.",
+      "Introducing an online licensing portal for quick and hassle-free approvals.",
+      "Ensuring transparency and accountability in the licensing process to reduce corruption.",
+    ],
+  },
+  {
+    image: "/images/image12.jpg",
+    title: "Transportation Services",
+    description: "Revolutionizing urban mobility for a sustainable future.",
+    items: [
+      "Developing a modern, integrated public transportation system, including buses, trains, and ferries.",
+      "Introducing smart ticketing systems for seamless travel across different modes of transport.",
+      "Promoting eco-friendly transportation options like electric vehicles and bicycle-sharing programs.",
+    ],
+  },
 ];

@@ -1,85 +1,59 @@
 import {
-  FaMoneyBill,
-  FaHome,
-  FaBusinessTime,
-  FaCommentDots,
-  FaBuilding,
-  FaBus,
+  FaChartLine,
+  FaFileAlt,
+  FaGraduationCap,
   FaHospital,
-  FaSchool,
   FaParking,
-  FaAmbulance,
   FaTicketAlt,
-  FaIdCard,
+  FaUser,
+  FaCreditCard,
+  FaAmbulance,
+  FaCommentDots,
 } from "react-icons/fa";
 
 export const services = [
   {
-    title: "Online Bill Payments",
-    icon: <FaMoneyBill />,
-    features:
-      "Pay utility bills (electricity, water, gas) and taxes seamlessly.",
+    title: "license",
+    icon: <FaFileAlt className="icon" />,
   },
   {
-    title: "Property Tax Management",
-    icon: <FaHome />,
-    features: "Register, calculate, and pay property taxes online.",
+    title: "holdings & tax",
+    icon: <FaChartLine className="icon" />,
   },
   {
-    title: "Business Licensing",
-    icon: <FaBusinessTime />,
-    features: "Apply for and renew business licenses digitally.",
+    title: "permits",
+    icon: <FaFileAlt className="icon" />,
   },
   {
-    title: "Complaint and Feedback Portal",
-    icon: <FaCommentDots />,
-    features:
-      "Report issues like waste management, road repairs, or street lighting.",
+    title: "education",
+    icon: <FaGraduationCap className="icon" />,
   },
   {
-    title: "Building Permits",
-    icon: <FaBuilding />,
-    features: "Apply for construction permits and track their status online.",
+    title: "health",
+    icon: <FaHospital className="icon" />,
   },
   {
-    title: "Public Transport Information",
-    icon: <FaBus />,
-    features: "Access real-time updates on bus and train schedules.",
+    title: "parking",
+    icon: <FaParking className="icon" />,
   },
   {
-    title: "Health Services",
-    icon: <FaHospital />,
-    features:
-      "Book appointments at public hospitals and access health records.",
+    title: "tourism",
+    icon: <FaTicketAlt className="icon" />,
   },
   {
-    title: "Education Portal",
-    icon: <FaSchool />,
-    features:
-      "Enroll children in schools, check exam results, and access educational resources.",
+    title: "citizen services",
+    icon: <FaUser className="icon" />,
   },
   {
-    title: "Parking Management",
-    icon: <FaParking />,
-    features:
-      "Reserve and pay for parking slots in advance through the online portal.",
+    title: "pay fees",
+    icon: <FaCreditCard className="icon" />,
   },
   {
-    title: "Emergency Services",
-    icon: <FaAmbulance />,
-    features:
-      "Request emergency assistance (police, fire, ambulance) and track response times.",
+    title: "emergency service",
+    icon: <FaAmbulance className="icon" />,
   },
   {
-    title: "Tourism and Events",
-    icon: <FaTicketAlt />,
-    features:
-      "Book tickets for local attractions, events, and cultural programs.",
-  },
-  {
-    title: "Citizen ID Services",
-    icon: <FaIdCard />,
-    features:
-      "Apply for or renew national ID cards and other citizen documents online.",
+    title: "feedback",
+    icon: <FaCommentDots className="icon" />,
   },
 ];

@@ -17,13 +17,18 @@ export default function Header() {
             <div className={styles.nav}>
               <div className={styles.logo}>
                 <h2>
-                  <Link href="/">Chattogram</Link>
+                  <Link href="/">Smart City</Link>
                 </h2>
               </div>
               <ul className={`${show ? styles.show : ""} ${styles.menu}`}>
                 <li className={styles.navItem}>
                   <Link className={styles.navLink} href="#contact">
                     Contact
+                  </Link>
+                </li>
+                <li className={styles.navItem}>
+                  <Link className={styles.navLink} href="/locations">
+                    Office Locations
                   </Link>
                 </li>
                 <li className={styles.navItem}>
