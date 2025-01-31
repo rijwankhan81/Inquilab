@@ -28,19 +28,21 @@ export default function Office() {
                   {selectedLocation ? selectedLocation.name : "-- Select --"}
                 </div>
                 {isDropdownOpen && (
-                  <ul className={styles.dropdownList}>
-                    {locations.map((location) => (
-                      <li
-                        key={location.id}
-                        onClick={() => {
-                          setSelectedLocation(location);
-                          setDropdownOpen(false);
-                        }}
-                      >
-                        {location.name}
-                      </li>
-                    ))}
-                  </ul>
+                  <div className={styles.dropdownList}>
+                    <ul className={styles.dropdownListWrapper}>
+                      {locations.map((location) => (
+                        <li
+                          key={location.id}
+                          onClick={() => {
+                            setSelectedLocation(location);
+                            setDropdownOpen(false);
+                          }}
+                        >
+                          {location.name}
+                        </li>
+                      ))}
+                    </ul>
+                  </div>
                 )}
               </div>
 

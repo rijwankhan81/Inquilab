@@ -1,0 +1,356 @@
+@use "/src/styles/var" as *;
+
+.banner {
+    padding-top: 120px;
+    padding-bottom: 50px;
+
+    @media(max-width:$md) {
+        padding-top: 100px;
+    }
+
+    @media(max-width:$sm) {
+        padding-top: 70px;
+    }
+
+    .container {
+        background-image: url(/images/banner1.jpg);
+        background-repeat: no-repeat;
+        background-position: center;
+        background-size: cover;
+        position: relative;
+        border-radius: 30px;
+        overflow: hidden;
+
+        @media(max-width:$sm) {
+            border-radius: 0px;
+        }
+
+        &::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: #000000a3;
+        }
+    }
+
+    .content {
+        padding: 50px;
+        position: relative;
+        z-index: 1;
+        text-align: center;
+
+        @media(max-width:$sm) {
+            padding: 50px 20px;
+        }
+
+        h1 {
+            font-weight: 900;
+            color: #fff;
+            margin-bottom: 20px;
+        }
+
+        p {
+            color: #ddd;
+            margin: 0;
+        }
+    }
+}
+
+.openings {
+    background: #f4f4f4;
+}
+
+.careers {
+    padding: 100px 0;
+
+    @media(max-width:$md) {
+        padding: 50px 0;
+    }
+
+
+    h2 {
+        text-align: center;
+    }
+
+    .jobListings {
+        gap: 20px;
+    }
+
+    .jobDetails {
+        flex: 1;
+
+        .jobHeader {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            margin-bottom: 10px;
+
+            @media(max-width:$md) {
+                flex-direction: column;
+                text-align: center;
+            }
+
+            h3 {
+                margin: 0;
+                font-size: 20px;
+                font-weight: 900;
+            }
+        }
+
+        p {
+            margin: 0;
+        }
+
+        .location {
+            display: flex;
+            gap: 5px;
+            align-items: center;
+            background: $primary;
+            color: #fff;
+            padding: 3px 8px;
+            border-radius: 5px;
+        }
+    }
+
+    .jobCard {
+        background: #fff;
+        padding: 20px;
+        border-radius: 8px;
+        // box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        display: flex;
+        align-items: center;
+        gap: 20px;
+        margin-top: 20px;
+
+        @media(max-width:$md) {
+            flex-direction: column;
+            text-align: center;
+        }
+    }
+
+
+
+    .jobIcon {
+        width: 50px;
+        height: 50px;
+
+        svg {
+            font-size: 40px;
+            color: $primary;
+        }
+    }
+
+    .applyButton {
+        width: fit-content;
+
+        a {
+            display: inline-block;
+            padding: 10px 20px;
+            background: $primary;
+            font-size: 14px;
+            font-weight: 600;
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+            text-align: center;
+
+            &:hover {
+                opacity: 0.8;
+            }
+        }
+    }
+
+
+}
+
+.joinUs {
+    padding: 100px 0;
+
+    @media (max-width: 991px) {
+        padding: 70px 0;
+    }
+
+    @media (max-width: 575px) {
+        padding: 50px 0;
+    }
+
+    .head {
+        text-align: center;
+        max-width: 800px;
+        margin: auto;
+
+        h2 {
+            font-size: 48px;
+            font-weight: 900;
+
+
+            @media (max-width: 575px) {
+                font-size: 38px;
+            }
+        }
+
+        p {
+            font-size: 18px;
+            color: #718096;
+        }
+    }
+
+    .apply {
+        max-width: 900px;
+        margin: auto;
+        margin-top: 50px;
+
+        @media (max-width: 991px) {
+            margin-top: 20px;
+        }
+
+        .form {
+            background: #fff;
+            box-shadow: 0 5.55px 41.62px 0 rgba(0, 0, 0, 0.0509803922);
+            padding: 70px 50px;
+            border-radius: 40px;
+            display: flex;
+            flex-direction: column;
+            gap: 25px;
+
+            @media (max-width: 575px) {
+                border-radius: 20px;
+                padding: 30px;
+                gap: 15px;
+            }
+
+            .parentField {
+                display: grid;
+                grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+                gap: 25px;
+
+                @media (max-width: 575px) {
+                    gap: 15px;
+                }
+            }
+
+            label {
+                font-size: 18px;
+                font-weight: 600;
+                margin-bottom: 5px;
+
+                @media (max-width: 575px) {
+                    font-size: 16px;
+                }
+
+                span {
+                    color: red;
+                }
+            }
+
+            .field {
+                input {
+                    box-shadow: none;
+                    padding: 20px;
+                    border-radius: 10px;
+                    height: 70px;
+                    border: 1.5px solid #fff;
+                    background-color: #f6f7fd;
+                    width: 100%;
+
+                    @media (max-width: 575px) {
+                        height: 50px;
+                        padding: 10px 20px;
+                        border-radius: 6px;
+                    }
+                }
+
+                select {
+                    box-shadow: none;
+                    padding: 20px;
+                    border-radius: 10px;
+                    height: 70px;
+                    border: 1.5px solid #fff;
+                    background-color: #f6f7fd;
+                    width: 100%;
+
+                    @media (max-width: 575px) {
+                        height: 50px;
+                        padding: 10px 20px;
+                        border-radius: 6px;
+                    }
+                }
+            }
+
+            .textField {
+                textarea {
+                    box-shadow: none;
+                    padding: 20px;
+                    height: 170px;
+                    margin: 0;
+                    border: 1.5px solid #fff;
+                    border-radius: 10px;
+                    background-color: #f6f7fd;
+                    width: 100%;
+
+                    @media (max-width: 575px) {
+                        height: 100px;
+                        padding: 10px 20px;
+                        border-radius: 6px;
+                    }
+                }
+            }
+
+            .fileInput {
+                position: relative;
+                cursor: pointer;
+
+                .choose {
+                    position: absolute;
+                    top: 0;
+                    left: 0;
+                    width: 100%;
+                    height: 100%;
+                    display: flex;
+                    justify-content: space-between;
+                    align-items: center;
+                    background-color: #f6f7fd;
+                    border-radius: 10px;
+                    border: 1.5px solid #ffffff;
+                    padding: 0 20px;
+                    pointer-events: none;
+
+                    h6 {
+                        margin: 0;
+                        color: #718096;
+                        font-size: 14px;
+                    }
+
+                    svg {
+                        font-size: 20px;
+                    }
+                }
+            }
+
+            .btnField {
+                text-align: center;
+
+                .btn {
+                    display: inline-block;
+                    border-radius: 15px;
+                    background: linear-gradient(225deg, $primary 0%, $primary 100%);
+
+                    font-weight: 600;
+                    color: #fff;
+                    border: 1.46px solid #ffffff;
+                    box-shadow: 0px 7.96px 97.52px 0px rgba(0, 0, 0, 0.1490196078);
+                    text-decoration: none;
+                    position: relative;
+                    padding: 15px 40px;
+
+                    @media (max-width: 575px) {
+                        font-size: 16px;
+                    }
+                }
+            }
+        }
+    }
+}

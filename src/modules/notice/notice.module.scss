@@ -1,0 +1,40 @@
+@use "/src/styles/var" as *;
+
+.black_ribbon {
+    width: 100%;
+    height: auto;
+    background: linear-gradient(225deg, #ddd 0%, $primary 100%);
+    background: #f4f4f4;
+    margin-top: 70px;
+
+    @media(max-width:$md) {
+        margin-top: 50px;
+    }
+
+    :global {
+        .rfm-child {
+            &:nth-child(even) {
+                a {
+                    color: #909090;
+                }
+            }
+        }
+    }
+
+    .marq {
+        display: flex;
+    }
+
+    .ribbon_text {
+        padding: 20px 15px;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        width: 100%;
+        gap: 30px;
+        font-weight: 700;
+
+
+
+    }
+}

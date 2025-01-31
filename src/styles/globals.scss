@@ -16,6 +16,22 @@ body {
   font-family: $font_one;
 }
 
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+
+::-webkit-scrollbar-track {
+  background: #ddd;
+  border-radius: 10px;
+}
+
+
+::-webkit-scrollbar-thumb {
+  background: $primary;
+  border-radius: 10px;
+}
+
 img {
   height: auto;
   width: auto;

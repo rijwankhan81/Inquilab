@@ -26,6 +26,7 @@ const Chatbot = () => {
     <div className={styles.chatContainer}>
       {isOpen && (
         <div className={styles.chatbotContainer}>
+          <h4>Smart AI Chatbot</h4>
           <div className={styles.chatWindow}>
             {messages.map((msg, index) => (
               <div

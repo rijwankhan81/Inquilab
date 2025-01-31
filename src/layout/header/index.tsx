@@ -22,28 +22,18 @@ export default function Header() {
               </div>
               <ul className={`${show ? styles.show : ""} ${styles.menu}`}>
                 <li className={styles.navItem}>
-                  <Link className={styles.navLink} href="#contact">
-                    Contact
-                  </Link>
-                </li>
-                <li className={styles.navItem}>
                   <Link className={styles.navLink} href="/locations">
                     Office Locations
                   </Link>
                 </li>
                 <li className={styles.navItem}>
-                  <Link className={styles.navLink} href="/#vision">
-                    Our Vision
+                  <Link className={styles.navLink} href="/careers">
+                    Careers
                   </Link>
                 </li>
                 <li className={styles.navItem}>
-                  <Link className={styles.navLink} href="/#key">
-                    Key Pillars
-                  </Link>
-                </li>
-                <li className={styles.navItem}>
-                  <Link className={styles.navLink} href="/#projects">
-                    Ongoing Projects
+                  <Link className={styles.navLink} href="#contact">
+                    Contact
                   </Link>
                 </li>
               </ul>

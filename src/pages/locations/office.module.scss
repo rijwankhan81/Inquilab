@@ -34,16 +34,28 @@
         }
 
         .dropdownList {
-            list-style: none;
+
             position: absolute;
             z-index: 1;
             top: 54px;
             left: 50%;
             transform: translateX(-50%);
             background: #fff;
-            padding: 20px;
-            border-radius: 20px;
+            padding: 20px 10px;
+            border-radius: 15px;
             box-shadow: rgba(0, 0, 0, 0.06) 0px 10px 21.25px 3.75px;
+
+
+            .dropdownListWrapper {
+                max-height: 200px;
+                overflow-y: auto;
+                list-style: none;
+                padding: 0 10px;
+
+                &::-webkit-scrollbar {
+                    width: 4px;
+                }
+            }
 
 
             li {

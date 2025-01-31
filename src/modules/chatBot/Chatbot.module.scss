@@ -32,6 +32,15 @@
     overflow: hidden;
     background: #fff;
     box-shadow: rgba(0, 0, 0, 0.06) 0px 10px 21.25px 3.75px;
+
+    h4 {
+        font-size: 14px;
+        text-align: center;
+        margin: 0;
+        background: $primary;
+        color: #fff;
+        padding: 8px;
+    }
 }
 
 .chatWindow {

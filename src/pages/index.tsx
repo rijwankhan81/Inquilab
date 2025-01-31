@@ -3,6 +3,7 @@ import { ongoingProjects } from "@/constants/ongoingProjects";
 import NextImage from "@/hooks/NextImage";
 import Footer from "@/layout/footer";
 import Header from "@/layout/header";
+import Notice from "@/modules/notice";
 import styles from "@/styles/Home.module.scss";
 import Head from "next/head";
 import { Container } from "react-bootstrap";
@@ -30,6 +31,7 @@ export default function Home() {
             </video>
           </Container>
         </section>
+        <Notice />
         <section className={styles.welcome}>
           <Container className={styles.container}>
             <div className={styles.row}>
@@ -93,6 +95,43 @@ export default function Home() {
                   to create a brighter, greener, and smarter future for
                   Chattogram.&#34;
                 </p>
+              </div>
+            </div>
+          </Container>
+        </section>
+        <section className={styles.progress}>
+          <Container>
+            <h2>Chattogram’s Progress Under Leadership</h2>
+            <div className={styles.row}>
+              <div className={styles.videos}>
+                <iframe
+                  src="https://www.youtube.com/embed/ybYb819WuLo"
+                  title="১১ বছর আগের খালেদা জিয়ার ভুমিকা মনে রেখেছেন ড. মুহাম্মদ ইউনূস? ইচ্ছা পূরণ হয়নি শেখ হাসিনার!"
+                  frameBorder="0"
+                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                  referrerPolicy="strict-origin-when-cross-origin"
+                  allowFullScreen
+                ></iframe>
+              </div>
+              <div className={styles.videos}>
+                <iframe
+                  src="https://www.youtube.com/embed/O4ctN7FdHQk"
+                  title="এমন কোন স্প্রে আমি চাইনা যা দিলে মশা লাফ দিয়ে উঠে যাবে: ডাঃ শাহাদাত হোসেন | Dr. Shahadat Hossain"
+                  frameBorder="0"
+                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                  referrerPolicy="strict-origin-when-cross-origin"
+                  allowFullScreen
+                ></iframe>
+              </div>
+              <div className={styles.videos}>
+                <iframe
+                  src="https://www.youtube.com/embed/KacMxL8ylsE"
+                  title="সিটি করপোরেশনে রাজনীতির আলাপ নিয়ে আসবেন না : ডাঃ শাহাদাত হোসেন | Dr. Shahadat Hossain | Channel 24"
+                  frameBorder="0"
+                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                  referrerPolicy="strict-origin-when-cross-origin"
+                  allowFullScreen
+                ></iframe>
               </div>
             </div>
           </Container>
