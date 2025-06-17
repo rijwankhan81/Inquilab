@@ -1,7 +1,7 @@
 @use "/src/styles/var" as *;
 
 .header {
-    padding: 20px 0;
+    padding: 10px 0;
     background: #fff;
     position: fixed;
     width: 100%;
@@ -10,9 +10,7 @@
     z-index: 10;
     box-shadow: rgba(0, 0, 0, 0.06) 0px 10px 21.25px 3.75px;
 
-    @media(max-width:$sm) {
-        padding: 15px 0;
-    }
+
 
     .nav {
         display: grid;
@@ -32,20 +30,13 @@
         }
 
         .logo {
-            h2 {
-                margin: 0;
-                text-transform: uppercase;
-                font-size: 24px;
-                font-weight: 900;
-                cursor: pointer;
-                color: $primary;
+            img {
+                width: 100%;
+                height: auto;
+                max-width: 100px;
 
-                @media(max-width:$md) {
-                    font-size: 20px;
-                }
-
-                a {
-                    text-decoration: none;
+                @media(max-width:$sm) {
+                    max-width: 50px;
                 }
             }
         }
@@ -91,7 +82,7 @@
             a {
                 display: inline-block;
                 text-decoration: none;
-                background: $primary;
+                background: $secondary;
                 color: #fff;
                 padding: 10px 20px;
                 border-radius: 10px;

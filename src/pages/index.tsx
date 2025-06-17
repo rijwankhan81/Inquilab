@@ -1,49 +1,86 @@
 import { data } from "@/constants/keyData";
 import { ongoingProjects } from "@/constants/ongoingProjects";
+import { videos } from "@/constants/videos";
 import NextImage from "@/hooks/NextImage";
 import Footer from "@/layout/footer";
 import Header from "@/layout/header";
 import Notice from "@/modules/notice";
 import styles from "@/styles/Home.module.scss";
 import Head from "next/head";
+import Link from "next/link";
 import { Container } from "react-bootstrap";
 
 export default function Home() {
   return (
     <>
       <Head>
-        <title>Transforming Chattogram into a Smart and Sustainable City</title>
+        <title>Welcome to Hefazat-e-Islam — Guardians of Islamic Values</title>
       </Head>
       <Header />
       <main className={styles.page}>
         <section className={styles.banner}>
           <Container>
-            <video
+            <NextImage
               className={styles.video}
-              width="640"
-              height="360"
-              autoPlay
-              loop
-              muted
-            >
-              <source src="/images/banner.mp4" type="video/mp4" />
-              Your browser does not support the video tag.
-            </video>
+              src={"/images/bg.gif"}
+              alt={""}
+            />
           </Container>
         </section>
-        <Notice />
+        <section className={styles.donation}>
+          <Container>
+            <h2>Donate to Muslim Hands</h2>
+          </Container>
+          <div className={styles.wrapper}>
+            <Container>
+              <div className={styles.row}>
+                <div className={styles.col}>
+                  <div className={styles.donationType}>
+                    <select name="" id="">
+                      <option value="">Single Donation</option>
+                      <option value="">Regular Donation</option>
+                    </select>
+                  </div>
+                </div>
+                <div className={styles.col}>
+                  <div className={styles.amount}>
+                    <div className={styles.currency}>৳</div>
+                    <input type="text" placeholder="Amount" />
+                  </div>
+                </div>
+                <div className={styles.col}>
+                  <div className={styles.donationName}>
+                    <select name="" id="">
+                      <option value="">Sadaqa</option>
+                      <option value="">Zakat</option>
+                      <option value="">General Charity</option>
+                      <option value="">Interest</option>
+                    </select>
+                  </div>
+                </div>
+                <div className={styles.col}>
+                  <div className={styles.quickDonation}>
+                    <button>Quick Donation</button>
+                  </div>
+                </div>
+              </div>
+            </Container>
+          </div>
+        </section>
+
         <section className={styles.welcome}>
           <Container className={styles.container}>
             <div className={styles.row}>
               <div className={styles.content}>
-                <h2>A Smart and Sustainable City</h2>
+                <h2>Who We Are</h2>
                 <p>
-                  Chattogram, the bustling port city of Bangladesh, is on a
-                  transformative journey to become a smart and sustainable urban
-                  hub. With its rich history, strategic location, and economic
-                  significance, Chattogram is embracing innovation, technology,
-                  and eco-friendly practices to enhance the quality of life for
-                  its residents and create a model city for the future.
+                  Hefazat-e-Islam is a leading Islamic organization dedicated to
+                  preserving the purity of Islamic education, strengthening
+                  Islamic institutions, and fostering unity within the Muslim
+                  community. <br />
+                  Established by renowned Islamic scholars (ulama) and community
+                  leaders, we aim to promote moral guidance, justice, peace, and
+                  compassion in conformity with the Qur’ān and Sunnah.
                 </p>
               </div>
               <div className={styles.image}>
@@ -59,41 +96,46 @@ export default function Home() {
         <section className={styles.vission} id="vision">
           <Container className={styles.container}>
             <div className={styles.content}>
-              <h2>Our Vision</h2>
+              <h2>Our Mission</h2>
               <p>
-                To transform Chattogram into a globally recognized smart and
-                sustainable city that leverages cutting-edge technology,
-                promotes environmental stewardship, and ensures inclusive growth
-                for all its citizens.
+                To empower Muslims through education, service, and unity —
+                following the path of the Prophet صلى الله عليه وآله وسلم — and
+                to protect Islamic traditions while addressing the moral and
+                social challenges of our time.
               </p>
             </div>
           </Container>
         </section>
-        <section className={styles.mayor}>
+        <section className={styles.ameer}>
           <Container className={styles.container}>
             <div className={styles.head}>
-              <h2>A Message from the City Mayor</h2>
+              <h2>Message from Ameer</h2>
             </div>
             <div className={styles.row}>
               <div className={styles.image}>
-                <NextImage src={"/images/mayor.jpg"} alt={""} />
+                <NextImage src={"/images/ameer.webp"} alt={""} />
               </div>
               <div className={styles.content}>
                 <h3>
-                  <span>Dr. Shahadat Hossain</span>
-                  Honorable Mayor <br /> Chittagong City Corporation
+                  <span>Allama Junaid Babunagari</span>
+                  Ameer, Hefazat-e-Islam Bangladesh
                 </h3>
+                <h4>
+                  In the name of Allah, the Most Gracious, the Most Merciful.
+                </h4>
                 <p>
-                  &#34;Chattogram is not just a city; it is the heartbeat of
-                  Bangladesh&#39;s economy and a symbol of resilience and
-                  progress. As we embark on this ambitious journey to transform
-                  our city into a smart and sustainable urban center, I am
-                  committed to ensuring that every citizen benefits from this
-                  transformation. Together, we will build a city that is not
-                  only technologically advanced but also environmentally
-                  responsible and socially inclusive. Let us work hand in hand
-                  to create a brighter, greener, and smarter future for
-                  Chattogram.&#34;
+                  As we strive to guide our community toward justice, peace,
+                  unity, and moral purity, we must remain firm upon the Qur’ān
+                  and Sunnah.
+                  <br />
+                  Hefazat-e-Islam stands as a guardian of Islamic education,
+                  institutions, and values — upholding the rich traditions that
+                  enable us to raise a generation anchored in knowledge,
+                  compassion, and fairness.
+                  <br />
+                  We invite all Muslims to join us in this mission, to
+                  contribute to a future forged by strong faith, strong
+                  character, and unity under the guidance of Islam.
                 </p>
               </div>
             </div>
@@ -101,7 +143,7 @@ export default function Home() {
         </section>
         <section className={styles.progress}>
           <Container>
-            <h2>Chattogram’s Progress Under Leadership</h2>
+            <h2>Stories & Speeches</h2>
             <div className={styles.row}>
               {/* <div className={styles.videos}>
                 <iframe
@@ -113,30 +155,24 @@ export default function Home() {
                   allowFullScreen
                 ></iframe>
               </div> */}
-              <div className={styles.videos}>
-                <iframe
-                  src="https://www.youtube.com/embed/O4ctN7FdHQk"
-                  title="এমন কোন স্প্রে আমি চাইনা যা দিলে মশা লাফ দিয়ে উঠে যাবে: ডাঃ শাহাদাত হোসেন | Dr. Shahadat Hossain"
-                  frameBorder="0"
-                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                  referrerPolicy="strict-origin-when-cross-origin"
-                  allowFullScreen
-                ></iframe>
-              </div>
-              <div className={styles.videos}>
-                <iframe
-                  src="https://www.youtube.com/embed/KacMxL8ylsE"
-                  title="সিটি করপোরেশনে রাজনীতির আলাপ নিয়ে আসবেন না : ডাঃ শাহাদাত হোসেন | Dr. Shahadat Hossain | Channel 24"
-                  frameBorder="0"
-                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                  referrerPolicy="strict-origin-when-cross-origin"
-                  allowFullScreen
-                ></iframe>
-              </div>
+              {videos.map((category, index) => (
+                <div className={styles.videos}>
+                  <iframe
+                    key={index}
+                    src={category.video}
+                    // width="560"
+                    // height="314"
+                    // allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share"
+                  ></iframe>
+                </div>
+              ))}
+            </div>
+            <div className={styles.btn}>
+              <Link href="">See All Videos</Link>
             </div>
           </Container>
         </section>
-        <section className={styles.keyPillars} id="key">
+        {/* <section className={styles.keyPillars} id="key">
           <Container className={styles.container}>
             <div className={styles.head}>
               <h2>Key Pillars of Transformation</h2>
@@ -159,11 +195,11 @@ export default function Home() {
               ))}
             </div>
           </Container>
-        </section>
+        </section> */}
         <section className={styles.ongoingProjects} id="projects">
           <Container className={styles.container}>
             <div className={styles.head}>
-              <h2>Ongoing Projects</h2>
+              <h2> Our Commitment to Serve</h2>
             </div>
             <div className={styles.row}>
               {ongoingProjects.map((category, index) => (
@@ -185,8 +221,7 @@ export default function Home() {
             <div className={styles.head}>
               <h2>Get Involved</h2>
               <p>
-                Transforming Chattogram into a smart and sustainable city is a
-                collective effort. Here’s how you can contribute:
+                Hefazat-e-Islam invites you to become a part of this mission.
               </p>
             </div>
             <div className={styles.row}>
@@ -196,21 +231,21 @@ export default function Home() {
               <div className={styles.content}>
                 <ul>
                   <li>
-                    <span>Residents</span>: Adopt sustainable practices,
-                    participate in community programs, and stay informed about
-                    city initiatives.
-                  </li>
-                  <li>
-                    <span>Businesses</span>: Invest in green technologies,
-                    support local innovation, and collaborate with the
-                    government on smart city projects.
-                  </li>
-                  <li>
-                    <span>Government and NGOs</span>: Partner with stakeholders
-                    to implement policies and programs that drive sustainable
-                    development.
+                    Together, we can make a difference by strengthening our
+                    community, upholding justice, and spreading compassion.
                   </li>
                 </ul>
+                <div className={styles.btns}>
+                  <Link className={styles.btnOne} href="">
+                    Contact
+                  </Link>
+                  <Link className={styles.btnTwo} href="">
+                    Donation
+                  </Link>
+                  <Link className={styles.btnOne} href="">
+                    Become a Member
+                  </Link>
+                </div>
               </div>
             </div>
           </Container>

@@ -1,0 +1,26 @@
+export const videos = [
+  {
+    video:
+      "https://www.facebook.com/plugins/video.php?height=314&href=https%3A%2F%2Fwww.facebook.com%2Fhefazateislam.2010%2Fvideos%2F4112726682282329%2F&show_text=false&width=560&t=0",
+  },
+  {
+    video:
+      "https://www.facebook.com/plugins/video.php?height=314&href=https%3A%2F%2Fwww.facebook.com%2Fhefazateislam.2010%2Fvideos%2F965432005504693%2F&show_text=false&width=560&t=0",
+  },
+  {
+    video:
+      "https://www.facebook.com/plugins/video.php?height=314&href=https%3A%2F%2Fwww.facebook.com%2Fhefazateislam.2010%2Fvideos%2F709964294746079%2F&show_text=false&width=560&t=0",
+  },
+  {
+    video:
+      "https://www.facebook.com/plugins/video.php?height=314&href=https%3A%2F%2Fwww.facebook.com%2Fhefazateislam.2010%2Fvideos%2F1701859253753478%2F&show_text=false&width=560&t=0",
+  },
+  {
+    video:
+      "https://www.facebook.com/plugins/video.php?height=314&href=https%3A%2F%2Fwww.facebook.com%2Fhefazateislam.2010%2Fvideos%2F1016921047271753%2F&show_text=false&width=560&t=0",
+  },
+  {
+    video:
+      "https://www.facebook.com/plugins/video.php?height=314&href=https%3A%2F%2Fwww.facebook.com%2Fhefazateislam.2010%2Fvideos%2F1189663196231787%2F&show_text=false&width=560&t=0",
+  },
+];

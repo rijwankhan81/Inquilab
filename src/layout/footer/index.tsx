@@ -12,14 +12,13 @@ export default function Footer() {
           </div>
           <ul>
             <li>
-              <span>Email</span>: info@smartctg.gov.bd
+              <span>Email</span>: info@hefajat-e-islam.com
             </li>
             <li>
               <span>Phone</span>: +880-XXX-XXXXXXX
             </li>
             <li>
-              <span>Address</span>: Smart City Office, Chattogram City
-              Corporation, Chattogram, Bangladesh.
+              <span>Address</span>: Dhaka, Bangladesh
             </li>
           </ul>
         </Container>

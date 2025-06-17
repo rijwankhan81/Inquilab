@@ -1,60 +1,36 @@
-import {
-  FaTrafficLight,
-  FaTree,
-  FaSolarPanel,
-  FaGlobe,
-  FaBuilding,
-  FaRecycle,
-  FaPlug,
-  FaTools,
-} from "react-icons/fa";
+import { AiFillMessage } from "react-icons/ai";
+import { FaGlobe, FaHandsHelping, FaSchool } from "react-icons/fa";
+import { IoBook } from "react-icons/io5";
 
 export const ongoingProjects = [
   {
-    title: "Smart Traffic Management System",
+    icon: <IoBook />,
+    title: "Provide Islamic education for children and adults",
     description:
-      "Reducing congestion and improving road safety through AI-powered traffic control.",
-    icon: <FaTrafficLight />,
+      "We enable children and adults to learn Qur’anic studies, Islamic jurisprudence, moral guidance, and more.",
   },
   {
-    title: "Chattogram Green City Initiative",
-    description: "Planting 1 million trees and creating urban green belts.",
-    icon: <FaTree />,
+    icon: <FaSchool />,
+    title: "Preserve madrasas and Islamic institutions",
+    description:
+      "We protect and sustain madrasas and Islamic centers to keep our rich traditions alive.",
   },
   {
-    title: "Renewable Energy Adoption",
+    icon: <FaHandsHelping />,
+    title: "Support community services and aid initiatives",
     description:
-      "Installing solar panels on public buildings and promoting rooftop solar for households.",
-    icon: <FaSolarPanel />,
+      "We provide aid, food, financial assistance, and health care to those in need within our community.",
   },
   {
-    title: "Digital Chattogram Platform",
-    description:
-      "A one-stop portal for citizens to access government services, pay bills, and report issues.",
     icon: <FaGlobe />,
+    title: "Raise awareness about Islamic values and justice",
+    description:
+      "We promote fairness, justice, compassion, and unity, following the example of the Prophet صلى الله عليه وآله وسلم.",
   },
   {
-    title: "Properties Management",
+    icon: <AiFillMessage />,
+    title: "Engage in constructive dialogue for peace and unity",
     description:
-      "Digitizing property records and enabling online management of land and real estate transactions.",
-    icon: <FaBuilding />,
-  },
-  {
-    title: "Waste Management",
-    description:
-      "Implementing smart waste collection systems and promoting recycling initiatives to reduce landfill dependency.",
-    icon: <FaRecycle />,
-  },
-  {
-    title: "Utility Services",
-    description:
-      "Upgrading water, electricity, and gas distribution networks to ensure reliable and efficient service delivery.",
-    icon: <FaPlug />,
-  },
-  {
-    title: "Infrastructure Maintenance",
-    description:
-      "Using IoT and AI to monitor and maintain roads, bridges, and public buildings for safety and longevity.",
-    icon: <FaTools />,
+      "We foster understanding, reconciliation, and collaboration to bring peace and unity among all members of society.",
   },
 ];
