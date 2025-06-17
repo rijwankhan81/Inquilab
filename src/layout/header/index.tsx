@@ -8,12 +8,22 @@ import Head from "next/head";
 import LanguageSwitcher from "@/modules/languageSwitch";
 import { FaFacebook, FaYoutube } from "react-icons/fa";
 import { RiInstagramFill } from "react-icons/ri";
+import { useTranslation } from "react-i18next";
+import useLanguage from "@/hooks/useLanguage";
 export default function Header() {
   const [show, setShow] = useState(false);
 
   const toggleClass = () => {
     setShow((prevState) => !prevState);
   };
+
+  const { t } = useTranslation();
+
+  const isClient = useLanguage();
+
+  if (!isClient) {
+    return null;
+  }
   return (
     <>
       <Head>
@@ -52,44 +62,44 @@ export default function Header() {
               <ul className={`${show ? styles.show : ""} ${styles.menu}`}>
                 <li className={styles.navItem}>
                   <Link className={styles.navLink} href="/">
-                    About
+                    {t("About")}
                   </Link>
                 </li>
                 <li className={styles.navItem}>
                   <Link className={styles.navLink} href="/">
-                    Careers
+                    {t("Careers")}
                   </Link>
                 </li>
                 <li className={styles.navItem}>
                   <Link className={styles.navLink} href="/">
-                    Members
+                    {t("Members")}
                   </Link>
                 </li>
                 <li className={styles.navItem}>
                   <Link className={styles.navLink} href="/">
-                    Events
+                    {t("Events")}
                   </Link>
                 </li>
                 <li className={styles.navItem}>
                   <Link className={styles.navLink} href="/">
-                    Blogs
+                    {t("Blogs")}
                   </Link>
                 </li>
                 <li className={styles.navItem}>
                   <Link className={styles.navLink} href="/">
-                    Projects
+                    {t("Projects")}
                   </Link>
                 </li>
                 <li className={styles.navItem}>
                   <Link className={styles.navLink} href="">
-                    Contact
+                    {t("Contact")}
                   </Link>
                 </li>
               </ul>
               <div className={styles.btns}>
                 <div className={styles.contact}>
                   <Link className={styles.navLink} href="/">
-                    Donation
+                    {t("Donation")}
                   </Link>
                 </div>
                 <div className={styles.hamMenu} onClick={toggleClass}>

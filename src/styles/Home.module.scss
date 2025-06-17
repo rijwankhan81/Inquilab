@@ -653,6 +653,7 @@
 
         @media(max-width:$sm) {
             grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            padding: 30px 10px;
         }
 
         .image {
@@ -694,6 +695,11 @@
 
                 @media(max-width:$md) {
                     justify-content: center;
+                }
+
+                @media(max-width:$sm) {
+                    justify-content: center;
+                    flex-wrap: wrap;
                 }
 
                 a {

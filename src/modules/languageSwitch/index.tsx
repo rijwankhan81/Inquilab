@@ -32,8 +32,8 @@ const LanguageSwitcher = () => {
 
   // Language options with flags
   const languageOptions = [
-    { code: "en", name: "English", flag: "/images/en.png" },
     { code: "bn", name: "বাংলা", flag: "/images/bn.png" },
+    { code: "en", name: "English", flag: "/images/en.png" },
   ];
 
   // Only render the component on the client side to avoid SSR issues
