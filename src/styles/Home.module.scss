@@ -651,6 +651,10 @@
             gap: 20px;
         }
 
+        @media(max-width:$sm) {
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+        }
+
         .image {
             img {
                 border-radius: 20px;
