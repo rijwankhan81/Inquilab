@@ -1,10 +1,8 @@
-import { data } from "@/constants/keyData";
 import { ongoingProjects } from "@/constants/ongoingProjects";
 import { videos } from "@/constants/videos";
 import NextImage from "@/hooks/NextImage";
 import Footer from "@/layout/footer";
 import Header from "@/layout/header";
-import Notice from "@/modules/notice";
 import styles from "@/styles/Home.module.scss";
 import Head from "next/head";
 import Link from "next/link";
