@@ -154,9 +154,8 @@ export default function Home() {
                 ></iframe>
               </div> */}
               {videos.map((category, index) => (
-                <div className={styles.videos}>
+                <div className={styles.videos} key={index}>
                   <iframe
-                    key={index}
                     src={category.video}
                     // width="560"
                     // height="314"
