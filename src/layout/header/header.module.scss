@@ -1,7 +1,7 @@
 @use "/src/styles/var" as *;
 
 .header {
-    padding: 10px 0;
+    padding-bottom: 10px;
     background: #fff;
     position: fixed;
     width: 100%;
@@ -9,6 +9,38 @@
     left: 0;
     z-index: 10;
     box-shadow: rgba(0, 0, 0, 0.06) 0px 10px 21.25px 3.75px;
+
+    .top {
+        background: $primary;
+        padding: 5px 0;
+        position: relative;
+        z-index: 1;
+
+        .topWrapper {
+            display: flex;
+            justify-content: space-between;
+
+            .social {
+                display: flex;
+                align-items: center;
+                gap: 5px;
+
+                a {
+                    text-decoration: none;
+
+                    svg {
+                        color: #fff;
+                        border: 1px solid #fff;
+                        aspect-ratio: 1;
+                        display: block;
+                        padding: 3px;
+                        font-size: 22px;
+                        border-radius: 100%;
+                    }
+                }
+            }
+        }
+    }
 
 
 
@@ -33,7 +65,7 @@
             img {
                 width: 100%;
                 height: auto;
-                max-width: 100px;
+                max-width: 70px;
 
                 @media(max-width:$sm) {
                     max-width: 50px;
