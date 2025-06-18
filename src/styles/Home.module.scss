@@ -117,6 +117,13 @@
         gap: 20px;
         align-items: center;
 
+        .logo {
+            width: 100%;
+            max-width: 150px;
+            height: auto;
+            margin-bottom: 10px;
+        }
+
         .image {
             .inner {
                 display: grid;

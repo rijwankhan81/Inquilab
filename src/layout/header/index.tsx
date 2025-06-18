@@ -10,6 +10,7 @@ import { FaFacebook, FaYoutube } from "react-icons/fa";
 import { RiInstagramFill } from "react-icons/ri";
 import { useTranslation } from "react-i18next";
 import useLanguage from "@/hooks/useLanguage";
+import { FaXTwitter } from "react-icons/fa6";
 export default function Header() {
   const [show, setShow] = useState(false);
 
@@ -47,6 +48,9 @@ export default function Header() {
                 </Link>
                 <Link href="">
                   <FaYoutube />
+                </Link>
+                <Link href="">
+                  <FaXTwitter />
                 </Link>
               </div>
               <LanguageSwitcher />

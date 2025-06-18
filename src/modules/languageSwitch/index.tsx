@@ -25,8 +25,8 @@ const LanguageSwitcher = () => {
     i18n.changeLanguage(lang);
     setIsOpen(false);
     router.push(router.asPath, router.asPath, {
-      locale: lang,
-      scroll: false, // 🔥 This prevents page scroll to top
+      locale: lang === "bn" ? undefined : lang,
+      scroll: false,
     });
   };
 
@@ -34,6 +34,7 @@ const LanguageSwitcher = () => {
   const languageOptions = [
     { code: "bn", name: "বাংলা", flag: "/images/bn.png" },
     { code: "en", name: "English", flag: "/images/en.png" },
+    { code: "ar", name: "العربية", flag: "/images/ar.png" },
   ];
 
   // Only render the component on the client side to avoid SSR issues

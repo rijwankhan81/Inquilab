@@ -1,7 +1,7 @@
-import { blogsBN, blogsEN } from "@/constants/blogs";
-import { eventsBN, eventsEN } from "@/constants/events";
-import { dataBN, dataEN } from "@/constants/keyData";
-import { serveEN, serveBN } from "@/constants/serve";
+import { blogsAR, blogsBN, blogsEN } from "@/constants/blogs";
+import { eventsAR, eventsBN, eventsEN } from "@/constants/events";
+import { dataAR, dataBN, dataEN } from "@/constants/keyData";
+import { serveEN, serveBN, serveAR } from "@/constants/serve";
 import { videos } from "@/constants/videos";
 import NextImage from "@/hooks/NextImage";
 import useLanguage from "@/hooks/useLanguage";
@@ -20,10 +20,27 @@ export default function Home() {
   const { i18n, t } = useTranslation();
   const selectedLanguage = i18n.language;
 
-  const serve = selectedLanguage === "en" ? serveEN : serveBN;
-  const blogs = selectedLanguage === "en" ? blogsEN : blogsBN;
-  const events = selectedLanguage === "en" ? eventsEN : eventsBN;
-  const data = selectedLanguage === "en" ? dataEN : dataBN;
+  let serve, blogs, events, data;
+
+  switch (selectedLanguage) {
+    case "en":
+      serve = serveEN;
+      blogs = blogsEN;
+      events = eventsEN;
+      data = dataEN;
+      break;
+    case "ar":
+      serve = serveAR;
+      blogs = blogsAR;
+      events = eventsAR;
+      data = dataAR;
+      break;
+    default:
+      serve = serveBN;
+      blogs = blogsBN;
+      events = eventsBN;
+      data = dataBN;
+  }
 
   const isClient = useLanguage();
 
@@ -91,6 +108,11 @@ export default function Home() {
           <Container className={styles.container}>
             <div className={styles.row}>
               <div className={styles.content}>
+                <NextImage
+                  className={styles.logo}
+                  src={"/images/logo.jpg"}
+                  alt={""}
+                />
                 <h2>{t("Who We Are")}</h2>
                 <p>
                   {t("Who We Are Des")} <br />

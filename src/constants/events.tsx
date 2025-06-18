@@ -2,7 +2,7 @@ export const eventsEN = [
   {
     id: 1,
     title: "Islamic Finance Workshop",
-    image: "/images/image3.jpg",
+    image: "/images/e1.jpg",
     date: "20th July 2025",
     location: "Hefazat-e-Islam Community Center",
     description:
@@ -11,7 +11,7 @@ export const eventsEN = [
   {
     id: 2,
     title: "Ramadan Food Distribution Drive",
-    image: "/images/image3.jpg",
+    image: "/images/e2.jpg",
     date: "10th–30th Ramadan",
     location: "Local Community Kitchens",
     description:
@@ -20,7 +20,7 @@ export const eventsEN = [
   {
     id: 3,
     title: "Hospitality Management Training Camp",
-    image: "/images/image3.jpg",
+    image: "/images/e3.jpg",
     date: "5th–10th August 2025",
     location: "Hefazat-e-Islam Training Facility",
     description:
@@ -29,7 +29,7 @@ export const eventsEN = [
   {
     id: 4,
     title: "Digital Skills Bootcamp",
-    image: "/images/image3.jpg",
+    image: "/images/e4.jpg",
     date: "15th–20th September 2025",
     location: "Digital Innovation Center",
     description:
@@ -38,7 +38,7 @@ export const eventsEN = [
   {
     id: 5,
     title: "Microloan Initiative Benefit Dinner",
-    image: "/images/image3.jpg",
+    image: "/images/e5.jpg",
     date: "30th November 2025",
     location: "Community Hall",
     description:
@@ -50,7 +50,7 @@ export const eventsBN = [
   {
     id: 1,
     title: "ইসলামী অর্থায়ন ওয়ার্কশপ",
-    image: "/images/image3.jpg",
+    image: "/images/e1.jpg",
     date: "২০ই জুলাই ২০২৫",
     location: "হেফাজতে ইসলাম কমিউনিটি সেন্টার",
     description:
@@ -59,7 +59,7 @@ export const eventsBN = [
   {
     id: 2,
     title: "রমাদানে খাদ্য বিতরণ অভিযান",
-    image: "/images/image3.jpg",
+    image: "/images/e2.jpg",
     date: "১০ই–৩০ই রমাদান",
     location: "স্থানীয় কমিউনিটি রান্নাঘর",
     description:
@@ -68,7 +68,7 @@ export const eventsBN = [
   {
     id: 3,
     title: "আতিথেয়তা ব্যবস্থাপনা প্রশিক্ষণ ক্যাম্প",
-    image: "/images/image3.jpg",
+    image: "/images/e3.jpg",
     date: "৫ই–১০ই আগস্ট ২০২৫",
     location: "হেফাজতে ইসলাম প্রশিক্ষণ কেন্দ্র",
     description:
@@ -77,7 +77,7 @@ export const eventsBN = [
   {
     id: 4,
     title: "ডিজিটাল দক্ষতা বুটক্যাম্প",
-    image: "/images/image3.jpg",
+    image: "/images/e4.jpg",
     date: "15ই–20ই সেপ্টেম্বর ২০২৫",
     location: "ডিজিটাল উদ्भাবন কেন্দ্র",
     description:
@@ -86,10 +86,58 @@ export const eventsBN = [
   {
     id: 5,
     title: "মাইক্রোঋণ উদ্যোগ কল্যাণ নৈশভার",
-    image: "/images/image3.jpg",
+    image: "/images/e5.jpg",
     date: "30ই নভেম্বর 2025",
     location: "কমিউনিটি হল",
     description:
       "মাইক্রোঋণ উদ্যোগকে সমর্থন দিতে ও ছোট ব্যবসায়ীদের সফলতার গল্প উদ্‌যাপন করতে এই কল্যাণ নৈশভার আয়োজন।",
+  },
+];
+
+export const eventsAR = [
+  {
+    id: 1,
+    title: "ورشة عمل حول التمويل الإسلامي",
+    image: "/images/e1.jpg",
+    date: "20 يوليو 2025",
+    location: "مركز حفظة الإسلام المجتمعي",
+    description:
+      "تعلّم كيف يمكن للتمويل الإسلامي تمكين المشاريع الصغيرة والمساعدة في تحقيق الاستقلال المالي مع الالتزام بالمبادئ الإسلامية.",
+  },
+  {
+    id: 2,
+    title: "حملة توزيع الطعام في رمضان",
+    image: "/images/e2.jpg",
+    date: "10–30 رمضان",
+    location: "مطابخ المجتمع المحلية",
+    description:
+      "في كل رمضان، نتكاتف لتقديم سلال غذائية للعائلات المحتاجة وتعزيز روح التضامن خلال الشهر الفضيل.",
+  },
+  {
+    id: 3,
+    title: "مخيم تدريب إدارة الضيافة",
+    image: "/images/e3.jpg",
+    date: "5–10 أغسطس 2025",
+    location: "مركز تدريب حفظة الإسلام",
+    description:
+      "تجهيز الجيل الشاب بالمهارات والاستعداد الوظيفي في قطاع الفنادق والمطاعم المتنامي.",
+  },
+  {
+    id: 4,
+    title: "معسكر تدريبي للمهارات الرقمية",
+    image: "/images/e4.jpg",
+    date: "15–20 سبتمبر 2025",
+    location: "مركز الابتكار الرقمي",
+    description:
+      "تدريب الشباب على البرمجة، والتسويق الرقمي، والتكنولوجيا — لمساعدتهم على المساهمة في مستقبل رقمي مستدام.",
+  },
+  {
+    id: 5,
+    title: "عشاء خيري لمبادرة القروض الصغيرة",
+    image: "/images/e5.jpg",
+    date: "30 نوفمبر 2025",
+    location: "قاعة المجتمع",
+    description:
+      "عشاء لجمع التبرعات لدعم منصة القروض الصغيرة، وتكريم قصص أصحاب المشاريع الصغيرة الذين غيّر الاستقلال المالي حياتهم.",
   },
 ];
