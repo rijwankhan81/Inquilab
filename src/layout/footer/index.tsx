@@ -1,5 +1,5 @@
 import { Container } from "react-bootstrap";
-import styles from "./Footer.module.scss";
+import styles from "./footer.module.scss";
 import Link from "next/link";
 import { FiFacebook } from "react-icons/fi";
 import { FaInstagram, FaYoutube } from "react-icons/fa";
