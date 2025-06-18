@@ -102,7 +102,7 @@ export default function Header() {
               </ul>
               <div className={styles.btns}>
                 <div className={styles.contact}>
-                  <Link className={styles.navLink} href="/">
+                  <Link className={styles.navLink} href="/donation">
                     {t("Donation")}
                   </Link>
                 </div>

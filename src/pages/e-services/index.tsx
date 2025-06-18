@@ -3,7 +3,6 @@ import styles from "./services.module.scss";
 import Head from "next/head";
 import Header from "@/layout/header";
 import { Container } from "react-bootstrap";
-import { services } from "@/constants/e-services";
 export default function Home() {
   return (
     <>
@@ -28,17 +27,17 @@ export default function Home() {
         <section className={styles.services}>
           <Container>
             <h2>e-Services</h2>
-            <div className={styles.wrapper}>
+            {/* <div className={styles.wrapper}>
               {services.map((service, index) => (
                 <div key={index} className={styles.service}>
                   <div className={styles.icon}>{service.icon}</div>
                   <div className={styles.content}>
                     <h3>{service.title}</h3>
-                    {/* <p>{service.features}</p> */}
+                    
                   </div>
                 </div>
               ))}
-            </div>
+            </div> */}
           </Container>
         </section>
       </main>
