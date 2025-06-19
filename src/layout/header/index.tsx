@@ -65,12 +65,12 @@ export default function Header() {
               </div>
               <ul className={`${show ? styles.show : ""} ${styles.menu}`}>
                 <li className={styles.navItem}>
-                  <Link className={styles.navLink} href="/">
+                  <Link className={styles.navLink} href="/about">
                     {t("About")}
                   </Link>
                 </li>
                 <li className={styles.navItem}>
-                  <Link className={styles.navLink} href="/">
+                  <Link className={styles.navLink} href="/careers">
                     {t("Careers")}
                   </Link>
                 </li>

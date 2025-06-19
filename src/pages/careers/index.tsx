@@ -3,10 +3,41 @@ import styles from "./careers.module.scss";
 import Head from "next/head";
 import Header from "@/layout/header";
 import { Container } from "react-bootstrap";
-import { jobOpenings } from "@/constants/jobs";
+import { jobOpeningsAR, jobOpeningsBN, jobOpeningsEN } from "@/constants/jobs";
 import { IoLocationSharp } from "react-icons/io5";
 import { MdOutlineAttachFile } from "react-icons/md";
+import {
+  opportunitiesAR,
+  opportunitiesBN,
+  opportunitiesEN,
+} from "@/constants/opportunities";
+import useLanguage from "@/hooks/useLanguage";
+import { useTranslation } from "react-i18next";
+import { GetStaticProps } from "next";
+import { serverSideTranslations } from "next-i18next/serverSideTranslations";
 export default function Careers() {
+  const { i18n, t } = useTranslation();
+  const selectedLanguage = i18n.language;
+
+  let jobOpenings, opportunities;
+
+  switch (selectedLanguage) {
+    case "en":
+      jobOpenings = jobOpeningsEN;
+      opportunities = opportunitiesEN;
+      break;
+    case "ar":
+      jobOpenings = jobOpeningsAR;
+      opportunities = opportunitiesAR;
+      break;
+    default:
+      jobOpenings = jobOpeningsBN;
+      opportunities = opportunitiesBN;
+  }
+  const isClient = useLanguage();
+  if (!isClient) {
+    return null;
+  }
   return (
     <>
       <Head>
@@ -17,22 +48,41 @@ export default function Careers() {
         <section className={styles.banner}>
           <Container className={styles.container}>
             <div className={styles.content}>
-              <h1>Join Our Team and Build the Future of Chattogram</h1>
+              <h1>{t("About Banner Title")}</h1>
               <p>
-                Are you passionate about innovation, sustainability, and making
-                a meaningful impact? Do you want to be part of a transformative
-                journey that is shaping the future of one of Bangladesh’s most
-                dynamic cities? If so, we invite you to join our team and
-                contribute to the vision of transforming Chattogram into a smart
-                and sustainable city.
+                {t("About Banner Des")}
+                <br />
+                {t("About Banner Des Two")}
+                <br />
+                {t("About Banner Des Three")}
               </p>
+            </div>
+          </Container>
+        </section>
+        <section className={styles.opportunities}>
+          <Container>
+            <div className={styles.head}>
+              <h2>{t("Opportunities Available")}</h2>
+              <p>{t("Opportunities Available Des")}</p>
+            </div>
+
+            <div className={styles.wrapper}>
+              {opportunities.map((service, index) => (
+                <div key={index} className={styles.service}>
+                  <div className={styles.icon}>{service.icon}</div>
+                  <div className={styles.content}>
+                    <h3>{service.title}</h3>
+                    {/* <p>{service.features}</p> */}
+                  </div>
+                </div>
+              ))}
             </div>
           </Container>
         </section>
         <section className={styles.openings}>
           <Container>
             <div className={styles.careers}>
-              <h2>Current Job Openings</h2>
+              <h2>{t("Current Job Openings")}</h2>
               <div className={styles.jobListings}>
                 {jobOpenings.map((job) => (
                   <div key={job.id} className={styles.jobCard}>
@@ -42,10 +92,9 @@ export default function Careers() {
                         <h3>{job.title}</h3>
                         <div className={styles.location}>
                           <IoLocationSharp />
-                          <span>Chattogram</span>
+                          <span>{job.location}</span>
                         </div>
                       </div>
-                      <p>{job.description}</p>
                     </div>
                     {/* <h3>Requirements:</h3> */}
                     {/* <ul>
@@ -54,7 +103,7 @@ export default function Careers() {
                       ))}
                     </ul> */}
                     <div className={styles.applyButton}>
-                      <a href="#apply">Apply Now</a>
+                      <a href="#apply">{t("Apply Now")}</a>
                     </div>
                   </div>
                 ))}
@@ -65,25 +114,21 @@ export default function Careers() {
         <section className={styles.joinUs} id="apply">
           <Container>
             <div className={styles.head}>
-              <h2>Join Us </h2>
-              <p>
-                Ready to take the next step in your career? Join Jionex, where
-                your skills, ideas, and passion can make a real difference.
-              </p>
+              <h2>{t("Join Us")} </h2>
             </div>
             <div className={styles.apply}>
               <form className={styles.form}>
                 <div className={styles.parentField}>
                   <div className={styles.field}>
                     <label>
-                      Your Name
+                      {t("Your Name")}
                       <span>*</span>
                     </label>
                     <input type="text" />
                   </div>
                   <div className={styles.field}>
                     <label>
-                      Your E-mail
+                      {t("Your E-mail")}
                       <span>*</span>
                     </label>
                     <input type="email" />
@@ -92,19 +137,19 @@ export default function Careers() {
                 <div className={styles.parentField}>
                   <div className={styles.field}>
                     <label>
-                      Phone Number
+                      {t("Phone Number")}
                       <span>*</span>
                     </label>
                     <input type="text" />
                   </div>
                   <div className={styles.field}>
                     <label>
-                      Job Title
+                      {t("Job Title")}
                       <span>*</span>
                     </label>
 
                     <select name="" id="">
-                      <option>Select a job</option>
+                      <option>{t("Select a job")}</option>
                       {jobOpenings.map((job) => (
                         <option key={job.id} className={styles.jobCard}>
                           {job.title}
@@ -115,13 +160,13 @@ export default function Careers() {
                 </div>
                 <div className={styles.field}>
                   <label>
-                    Upload Your CV
+                    {t("Upload Your CV")}
                     <span>*</span>
                   </label>
                   <div className={styles.fileInput}>
                     <input type="file" name="" id="" />
                     <div className={styles.choose}>
-                      <h6>Attach File</h6>
+                      <h6>{t("Attach File")}</h6>
                       <MdOutlineAttachFile />
                     </div>
                   </div>
@@ -132,7 +177,7 @@ export default function Careers() {
                 </div> */}
 
                 <div className={styles.btnField}>
-                  <button className={styles.btn}>Submit</button>
+                  <button className={styles.btn}>{t("Submit")}</button>
                 </div>
               </form>
             </div>
@@ -143,3 +188,11 @@ export default function Careers() {
     </>
   );
 }
+
+export const getStaticProps: GetStaticProps = async (context) => {
+  return {
+    props: {
+      ...(await serverSideTranslations(context.locale ?? "bn", ["common"])),
+    },
+  };
+};

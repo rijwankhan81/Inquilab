@@ -16,6 +16,7 @@ import { useTranslation } from "react-i18next";
 import { IoLocationSharp } from "react-icons/io5";
 import { serverSideTranslations } from "next-i18next/serverSideTranslations";
 import Donation from "@/modules/donation";
+import GetInvolved from "@/modules/getInvolved";
 
 export default function Home() {
   const { i18n, t } = useTranslation();
@@ -246,33 +247,7 @@ export default function Home() {
             </div>
           </Container>
         </section>
-        <section className={styles.getInvolved}>
-          <Container className={styles.container}>
-            <div className={styles.row}>
-              <div className={styles.image}>
-                <NextImage src={"/images/image5.jpg"} alt={""} />
-              </div>
-              <div className={styles.content}>
-                <h2>{t("Get Involved")}</h2>
-                <p>{t("Get Involved Title")}</p>
-                <ul>
-                  <li>{t("Get Involved Des")}</li>
-                </ul>
-                <div className={styles.btns}>
-                  <Link className={styles.btnOne} href="">
-                    {t("Contact")}
-                  </Link>
-                  <Link className={styles.btnTwo} href="">
-                    {t("Donation")}
-                  </Link>
-                  <Link className={styles.btnOne} href="">
-                    {t("Become a Member")}
-                  </Link>
-                </div>
-              </div>
-            </div>
-          </Container>
-        </section>
+        <GetInvolved />
       </main>
       <Footer />
     </>

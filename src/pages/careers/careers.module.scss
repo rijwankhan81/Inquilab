@@ -1,19 +1,16 @@
 @use "/src/styles/var" as *;
 
 .banner {
-    padding-top: 120px;
+    padding-top: 150px;
     padding-bottom: 50px;
 
     @media(max-width:$md) {
         padding-top: 100px;
     }
 
-    @media(max-width:$sm) {
-        padding-top: 70px;
-    }
 
     .container {
-        background-image: url(/images/banner1.jpg);
+        background-image: url(/images/image7.jpg);
         background-repeat: no-repeat;
         background-position: center;
         background-size: cover;
@@ -59,12 +56,63 @@
     }
 }
 
+.opportunities {
+    padding: 50px 0;
+
+    .head {
+        margin-bottom: 30px;
+        max-width: 800px;
+        margin: auto;
+        text-align: center;
+    }
+
+    .wrapper {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+        gap: 20px;
+
+        @media(max-width:$sm) {
+            gap: 15px;
+            grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+        }
+
+        .service {
+            box-shadow: rgba(0, 0, 0, 0.06) 0px 10px 21.25px 3.75px;
+            background: #fff;
+            overflow: hidden;
+            padding: 20px;
+            border-radius: 20px;
+            text-align: center;
+            cursor: pointer;
+
+            @media(max-width:$sm) {
+                padding-top: 100px;
+                padding: 20px 10px;
+            }
+
+            h3 {
+                font-size: 16px;
+                font-weight: 900;
+                margin: 20px 0;
+                text-transform: capitalize;
+            }
+
+            .icon {
+                svg {
+                    font-size: 34px;
+                    color: $primary;
+                }
+            }
+        }
+    }
+}
+
 .openings {
     background: #f4f4f4;
 }
 
 .careers {
-    padding: 100px 0;
+    padding: 70px 0;
 
     @media(max-width:$md) {
         padding: 50px 0;
@@ -167,7 +215,7 @@
 }
 
 .joinUs {
-    padding: 100px 0;
+    padding: 70px 0;
 
     @media (max-width: 991px) {
         padding: 70px 0;
