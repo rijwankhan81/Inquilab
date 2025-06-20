@@ -61,7 +61,9 @@ export default function Header() {
           <Container className={styles.container}>
             <div className={styles.nav}>
               <div className={styles.logo}>
-                <NextImage src={"/images/logo2.png"} alt={""} />
+                <Link href="/">
+                  <NextImage src={"/images/logo2.png"} alt={""} />
+                </Link>
               </div>
               <ul className={`${show ? styles.show : ""} ${styles.menu}`}>
                 <li className={styles.navItem}>
@@ -75,17 +77,17 @@ export default function Header() {
                   </Link>
                 </li>
                 <li className={styles.navItem}>
-                  <Link className={styles.navLink} href="/">
+                  <Link className={styles.navLink} href="/members">
                     {t("Members")}
                   </Link>
                 </li>
                 <li className={styles.navItem}>
-                  <Link className={styles.navLink} href="/">
+                  <Link className={styles.navLink} href="/events">
                     {t("Events")}
                   </Link>
                 </li>
                 <li className={styles.navItem}>
-                  <Link className={styles.navLink} href="/">
+                  <Link className={styles.navLink} href="/blogs">
                     {t("Blogs")}
                   </Link>
                 </li>

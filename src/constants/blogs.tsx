@@ -36,7 +36,7 @@ export const blogsEN = [
   {
     id: 5,
     name: "Training Future Hospitality Leaders",
-    image: "/images/image1.jpg",
+    image: "/images/b5.jpg",
     date: "11 Dec 2024",
     description:
       "How our hotel and restaurant training programs enable employment and financial stability.",
@@ -44,7 +44,7 @@ export const blogsEN = [
   {
     id: 6,
     name: "Catering with Care — Halal Foods Initiative",
-    image: "/images/image1.jpg",
+    image: "/images/b6.jpg",
     date: "12 Dec 2024",
     description:
       "Behind the scenes of our halal food delivery service and its role in community empowerment.",
@@ -52,7 +52,7 @@ export const blogsEN = [
   {
     id: 7,
     name: "Technology & Digital Skills: Bridging the Gap",
-    image: "/images/image1.jpg",
+    image: "/images/b7.jpg",
     date: "12 Dec 2024",
     description:
       "Exploring coding, digital marketing, and data skills that can aid financial independence.",
@@ -60,7 +60,7 @@ export const blogsEN = [
   {
     id: 8,
     name: "Microloan Initiative: Transforming Lives",
-    image: "/images/image1.jpg",
+    image: "/images/b8.jpg",
     date: "12 Dec 2024",
     description:
       "Success stories from our microloan recipients — turning financial aid into sustainable livelihoods.",
@@ -102,7 +102,7 @@ export const blogsBN = [
   {
     id: 5,
     name: "আগামীর আতিথেয়তা নেতা তৈরি",
-    image: "/images/image1.jpg",
+    image: "/images/b5.jpg",
     date: "11 ডিসেম্বর 2024",
     description:
       "কিভাবে হোটেল ও রেস্টুরেন্ট ব্যবস্থাপনায় আমাদের প্রশিক্ষণ কর্মসূচিগুলি কর্মসংস্থান ও অর্থনৈতিক স্থিতিশীলতা সৃষ্টি করে।",
@@ -110,7 +110,7 @@ export const blogsBN = [
   {
     id: 6,
     name: "যত্নের সাথে পরিবেশন — হালাল খাদ্য উদ্যোগ",
-    image: "/images/image1.jpg",
+    image: "/images/b6.jpg",
     date: "12 ডিসেম্বর 2024",
     description:
       "আমাদের হালাল খাবার সরবরাহ উদ্যোগের অন্তরালের গল্প এবং এর সামাজিক ও অর্থনৈতিক ভূমিকা।",
@@ -118,7 +118,7 @@ export const blogsBN = [
   {
     id: 7,
     name: "প্রযুক্তিতে ও ডিজিটাল দক্ষতায় ব্যবধান হ্রাস",
-    image: "/images/image1.jpg",
+    image: "/images/b7.jpg",
     date: "12 ডিসেম্বর 2024",
     description:
       "কোডিং, ডিজিটাল মার্কেটিং ও তথ্য ব্যবস্থাপনার দক্ষতা যা অর্থনৈতিক স্বনির্ভরতা দিতে পারে।",
@@ -126,7 +126,7 @@ export const blogsBN = [
   {
     id: 8,
     name: "মাইক্রোঋণ উদ্যোগ: জীবন ও জীবিকার পরিবর্তন",
-    image: "/images/image1.jpg",
+    image: "/images/b8.jpg",
     date: "12 ডিসেম্বর 2024",
     description:
       "মাইক্রোঋণ গ্রহীতার সফলতার গল্প — অর্থনৈতিক সহায়তা যে টেকসই জীবিকার সুযোগ সৃষ্টি করেছে।",
@@ -168,7 +168,7 @@ export const blogsAR = [
   {
     id: 5,
     name: "تدريب قادة الضيافة في المستقبل",
-    image: "/images/image1.jpg",
+    image: "/images/b5.jpg",
     date: "11 ديسمبر 2024",
     description:
       "كيف تمكّن برامج التدريب على الفنادق والمطاعم من خلق فرص عمل واستقرار مالي.",
@@ -176,7 +176,7 @@ export const blogsAR = [
   {
     id: 6,
     name: "الطعام الحلال بعناية — مبادرة الضيافة",
-    image: "/images/image1.jpg",
+    image: "/images/b6.jpg",
     date: "12 ديسمبر 2024",
     description:
       "نظرة من الداخل على خدمة توصيل الطعام الحلال ودورها في تمكين المجتمع.",
@@ -184,7 +184,7 @@ export const blogsAR = [
   {
     id: 7,
     name: "التكنولوجيا والمهارات الرقمية: سد الفجوة",
-    image: "/images/image1.jpg",
+    image: "/images/b7.jpg",
     date: "12 ديسمبر 2024",
     description:
       "استكشاف البرمجة، والتسويق الرقمي، والمهارات الرقمية التي تدعم الاستقلال المالي.",
@@ -192,7 +192,7 @@ export const blogsAR = [
   {
     id: 8,
     name: "مبادرة القروض الصغيرة: تغيير الحياة",
-    image: "/images/image1.jpg",
+    image: "/images/b8.jpg",
     date: "12 ديسمبر 2024",
     description:
       "قصص نجاح من المستفيدين من القروض الصغيرة — تحويل المساعدة المالية إلى سبل عيش مستدامة.",
