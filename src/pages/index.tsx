@@ -15,7 +15,6 @@ import { Container } from "react-bootstrap";
 import { useTranslation } from "react-i18next";
 import { IoLocationSharp } from "react-icons/io5";
 import { serverSideTranslations } from "next-i18next/serverSideTranslations";
-import Donation from "@/modules/donation";
 import GetInvolved from "@/modules/getInvolved";
 
 export default function Home() {
@@ -65,7 +64,7 @@ export default function Home() {
             />
           </Container>
         </section>
-        <Donation />
+
         <section className={styles.welcome}>
           <Container className={styles.container}>
             <div className={styles.row}>

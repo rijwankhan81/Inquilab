@@ -104,9 +104,9 @@ export default function Header() {
               </ul>
               <div className={styles.btns}>
                 <div className={styles.contact}>
-                  <Link className={styles.navLink} href="/donation">
+                  {/* <Link className={styles.navLink} href="/donation">
                     {t("Donation")}
-                  </Link>
+                  </Link> */}
                 </div>
                 <div className={styles.hamMenu} onClick={toggleClass}>
                   <GiHamburgerMenu />

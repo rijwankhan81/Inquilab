@@ -31,9 +31,9 @@ export default function GetInvolved() {
                 <Link className={styles.btnOne} href="">
                   {t("Contact")}
                 </Link>
-                <Link className={styles.btnTwo} href="">
+                {/* <Link className={styles.btnTwo} href="">
                   {t("Donation")}
-                </Link>
+                </Link> */}
                 <Link className={styles.btnOne} href="">
                   {t("Become a Member")}
                 </Link>
