@@ -59,7 +59,7 @@
 .about {
     padding-top: 30px;
 
-    @media(max-width:$md) {
+    @media(max-width:$lg) {
         padding-top: 20px;
         text-align: center;
     }
@@ -74,11 +74,8 @@
         padding: 30px;
         border-radius: 30px;
 
-        @media(max-width:$lg) {
-            grid-template-columns: 2fr 3fr;
-        }
 
-        @media(max-width:$md) {
+        @media(max-width:$lg) {
             grid-template-columns: 1fr;
         }
 
@@ -88,6 +85,10 @@
         }
 
         .image {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
 
             img {
                 border-radius: 20px;
@@ -95,7 +96,7 @@
                 height: auto;
                 object-fit: cover;
 
-                @media(max-width:$md) {
+                @media(max-width:$lg) {
                     max-width: 150px;
                 }
             }
@@ -106,7 +107,7 @@
 .pragrams {
     padding: 70px 0;
 
-    @media(max-width:$md) {
+    @media(max-width:$lg) {
         padding: 50px 0;
 
     }
@@ -116,7 +117,7 @@
         padding-bottom: 30px;
 
         @media(max-width:$md) {
-            padding-bottom: 30px;
+            padding-bottom: 10px;
         }
     }
 
@@ -125,43 +126,50 @@
         grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
         gap: 30px;
 
-        @media(max-width:$md) {
+        @media(max-width:$lg) {
             grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 20px;
         }
 
 
         .wrapper {
-            box-shadow: rgba(0, 0, 0, 0.06) 0px 10px 21.25px 3.75px;
+            box-shadow: rgba(17, 12, 46, 0.15) 0px 48px 100px 0px;
             overflow: hidden;
             position: relative;
             display: flex;
             flex-direction: column;
             border-radius: 20px;
+            border: 1px solid #ddd;
 
             .btn {
                 margin-top: auto;
+                text-align: center;
+                padding-bottom: 20px;
 
                 a {
                     display: inline-block;
                     text-align: center;
                     text-decoration: none;
                     width: 100%;
+                    max-width: 250px;
                     background: #000;
                     color: #fff;
                     padding: 10px 20px;
                     font-size: 14px;
                     font-weight: 500;
+                    border-radius: 100px;
                 }
             }
         }
 
         .date {
             position: absolute;
-            top: 10px;
-            left: 10px;
+            top: 20px;
+            left: 20px;
             background: #fff;
             font-size: 13px;
             padding: 2px 6px;
+            border-radius: 10px;
         }
 
         .content {
@@ -197,11 +205,14 @@
 
         .image {
             text-align: center;
+            padding: 10px;
+            padding-bottom: 0;
 
             img {
                 width: 100%;
                 height: 250px;
                 object-fit: cover;
+                border-radius: 10px;
             }
         }
     }
@@ -228,7 +239,7 @@
     padding: 70px 0;
     background: #f9f9f9;
 
-    @media(max-width:$md) {
+    @media(max-width:$lg) {
         padding: 50px 0;
 
     }
@@ -238,7 +249,7 @@
         padding-bottom: 30px;
 
         @media(max-width:$md) {
-            padding-bottom: 30px;
+            padding-bottom: 10px;
         }
     }
 
@@ -247,44 +258,50 @@
         grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
         gap: 30px;
 
-        @media(max-width:$md) {
+        @media(max-width:$lg) {
             grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 20px;
         }
 
 
         .wrapper {
-            box-shadow: rgba(0, 0, 0, 0.06) 0px 10px 21.25px 3.75px;
+            box-shadow: rgba(17, 12, 46, 0.15) 0px 48px 100px 0px;
             overflow: hidden;
             position: relative;
             display: flex;
             flex-direction: column;
             border-radius: 20px;
-            background: #FFF;
+            border: 1px solid #ddd;
 
             .btn {
                 margin-top: auto;
+                text-align: center;
+                padding-bottom: 20px;
 
                 a {
                     display: inline-block;
                     text-align: center;
                     text-decoration: none;
                     width: 100%;
+                    max-width: 250px;
                     background: #000;
                     color: #fff;
                     padding: 10px 20px;
                     font-size: 14px;
                     font-weight: 500;
+                    border-radius: 100px;
                 }
             }
         }
 
         .date {
             position: absolute;
-            top: 10px;
-            left: 10px;
+            top: 20px;
+            left: 20px;
             background: #fff;
             font-size: 13px;
             padding: 2px 6px;
+            border-radius: 10px;
         }
 
         .content {
@@ -320,11 +337,14 @@
 
         .image {
             text-align: center;
+            padding: 10px;
+            padding-bottom: 0;
 
             img {
                 width: 100%;
                 height: 250px;
                 object-fit: cover;
+                border-radius: 10px;
             }
         }
     }

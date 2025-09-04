@@ -179,7 +179,12 @@ export default function Footer() {
           </div>
           <div className={styles.footer_bootom}>
             <p className={styles.copyright}>{t("Copyrights")}</p>
-            <p className={styles.copyright}>{t("Powered by JIONEX")}</p>
+            <p className={styles.copyright}>
+              {t("Innovated by")}{" "}
+              <Link href="https://www.jionex.com" target="_blank">
+                <NextImage src={"/images/jionex_logo_white.png"} alt={""} />
+              </Link>
+            </p>
           </div>
         </Container>
       </footer>

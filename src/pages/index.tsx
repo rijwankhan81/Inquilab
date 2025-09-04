@@ -106,6 +106,7 @@ export default function Home() {
             <div className={styles.row}>
               <div className={styles.image}>
                 <NextImage src={"/images/logo.png"} alt={""} />
+                <NextImage src={"/images/logo2.png"} alt={""} />
               </div>
               <div className={styles.content}>
                 <h2>{t("Who We Are")}</h2>
