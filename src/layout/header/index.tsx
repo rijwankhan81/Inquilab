@@ -19,17 +19,20 @@ export default function Header() {
   const router = useRouter();
   const menuRef = useRef<HTMLDivElement>(null);
 
+  // Close menu on route change
   useEffect(() => {
     const handleRouteChange = () => {
       setShowMenu(false);
-      setOpenDropdown(null); // optional
+      setOpenDropdown(null);
     };
 
     router.events.on("routeChangeStart", handleRouteChange);
     return () => {
       router.events.off("routeChangeStart", handleRouteChange);
     };
-  }, []);
+  }, [router.events]);
+
+  // Close menu when clicking outside
   useEffect(() => {
     const handleClickOutside = (event: MouseEvent) => {
       if (menuRef.current && !menuRef.current.contains(event.target as Node)) {
@@ -41,17 +44,13 @@ export default function Header() {
     if (showMenu) {
       document.addEventListener("mousedown", handleClickOutside);
     }
-
     return () => {
       document.removeEventListener("mousedown", handleClickOutside);
     };
   }, [showMenu]);
 
   const isClient = useLanguage();
-
-  if (!isClient) {
-    return null;
-  }
+  if (!isClient) return null;
 
   const toggleDropdown = (id: string) => {
     setOpenDropdown((prev) => (prev === id ? null : id));
@@ -59,21 +58,20 @@ export default function Header() {
 
   const isActive = (path: string) => router.pathname === path;
 
-  // Get language-specific dynamic data
+  // Language-specific nav
   const lang = i18n.language;
   const navTree =
     { en: navTreeEN, bn: navTreeBN, ar: navTreeAR }[lang] || navTreeEN;
 
-  const getDynamicChildren = (type: string) => {
-    // Since we don’t have tech/services data yet, return []
+  // Temporary stub for dynamic children
+  const getDynamicChildren = () => {
     return [];
   };
 
   const renderNavItem = (item: NavItem) => {
-    const hasDropdown = item.dropdown || item.children || item.dynamic;
-    const children = item.dynamic
-      ? getDynamicChildren(item.dynamic)
-      : item.children;
+    const children = item.dynamic ? getDynamicChildren() : item.children;
+
+    const hasDropdown = item.dropdown || (children && children.length > 0);
 
     if (hasDropdown && children) {
       return (
@@ -96,7 +94,7 @@ export default function Header() {
             }`}
           >
             {children.map((child) => (
-              <div className={styles.service} key={child.id}>
+              <div className={styles.service} key={child?.id}>
                 <Link
                   className={`${
                     isActive(child.link || "") ? styles.active : ""
@@ -133,7 +131,7 @@ export default function Header() {
         <link rel="icon" href="/images/logo.png" type="image/png" />
       </Head>
 
-      <header id="header" className={`${styles.header} `}>
+      <header id="header" className={styles.header}>
         <Container>
           <div className={styles.headWrapper}>
             <div className={styles.logo}>
