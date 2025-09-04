@@ -32,7 +32,7 @@ export const navTreeEN: NavItem[] = [
   {
     id: "programs",
     title: "Programs",
-    link: "/#programs",
+    link: "/programs",
   },
   { id: "publications", title: "Publications", link: "/#publications" },
   { id: "blog", title: "Blog", link: "/#blog" },
@@ -69,7 +69,7 @@ export const navTreeBN: NavItem[] = [
   {
     id: "programs",
     title: "প্রোগ্রাম সমূহ",
-    link: "/#programs",
+    link: "/programs",
   },
   { id: "publications", title: "প্রকাশনা", link: "/#publications" },
   { id: "blog", title: "ব্লগ", link: "/#blog" },
@@ -107,7 +107,7 @@ export const navTreeAR: NavItem[] = [
   {
     id: "programs",
     title: "البرامج",
-    link: "/#programs",
+    link: "/programs",
   },
   { id: "publications", title: "الإصدارات", link: "/#publications" },
   { id: "blog", title: "المدونة", link: "/#blog" },

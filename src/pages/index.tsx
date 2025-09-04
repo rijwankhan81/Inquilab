@@ -144,7 +144,7 @@ export default function Home() {
               ))}
             </div>
             <div className={styles.seebtn}>
-              <Link href="">{t("See all programs")}</Link>
+              <Link href="/programs">{t("See all programs")}</Link>
             </div>
           </Container>
         </section>
@@ -179,7 +179,7 @@ export default function Home() {
               ))}
             </div>
             <div className={styles.seebtn}>
-              <Link href="">{t("See all news gallery")}</Link>
+              <Link href="/news">{t("See all news gallery")}</Link>
             </div>
           </Container>
         </section>
