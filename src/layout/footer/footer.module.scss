@@ -1,46 +1,48 @@
 @import '/src/styles/var';
 
 .footer {
-    padding: 70px 0;
+    padding-top: 80px;
     color: #fff;
     background-color: #000;
-
-
+    position: relative;
 
 
     @media (max-width: $sm) {
-        padding: 50px 0;
+        padding-top: 50px;
     }
 
     .wrapper {
-        display: flex;
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr 1fr;
         justify-content: space-between;
         gap: 40px;
 
-        @media (max-width: $xl) {
-            flex-wrap: wrap;
+        @media (max-width: $md) {
+            grid-template-columns: 1fr 1fr;
         }
 
         @media (max-width: $sm) {
             gap: 25px;
+            grid-template-columns: 1fr;
         }
 
         h3 {
-            font-size: 20px;
-            margin-bottom: 20px;
+            font-size: 22px;
+            margin-bottom: 26px;
+            color: #fff;
 
             @media (max-width: $xxl) {
-                font-size: 18px;
-                margin-bottom: 15px;
+                font-size: 20px;
+                margin-bottom: 20px;
             }
         }
 
         h4 {
-            font-size: 20px;
+            font-size: 18px;
             margin-bottom: 20px;
 
             @media (max-width: $xxl) {
-                font-size: 18px;
+                font-size: 16px;
             }
         }
 
@@ -54,28 +56,23 @@
 
             .logo {
                 display: block;
+                text-align: left;
                 margin-bottom: 20px;
 
-
                 img {
-                    width: 100%;
-                    max-width: 100px;
+                    width: 100px;
+                    height: 100px;
 
-                    @media (max-width: $sm) {
-                        max-width: 50px;
-                    }
                 }
             }
 
             p {
-                font-size: 20px;
+                color: #9CA3AF;
+            }
 
-                @media (max-width: $xxl) {
-                    font-size: 16px;
-                }
-
-                @media (max-width: $sm) {
-                    font-size: 14px;
+            .location {
+                a {
+                    color: #fff;
                 }
             }
         }
@@ -83,6 +80,8 @@
         .footer_menu {
             @media (max-width: $md) {
                 width: 100%;
+                border-bottom: 2px solid grey;
+                padding-bottom: 30px;
             }
 
             ul {
@@ -91,27 +90,44 @@
                 margin: 0;
 
                 li {
-                    padding: 6px 0;
+                    padding: 7px 0;
 
-                    @media (max-width: $xxl) {
-                        padding: 3px 0;
-                    }
 
                     a {
                         text-decoration: none;
-                        color: #fff;
+                        color: #9CA3AF;
                         font-size: 16px;
-                        font-weight: 500;
+                        font-weight: 400;
 
-                        @media (max-width: $xxl) {
-                            font-size: 16px;
-                        }
                     }
 
                     .active {
-                        background: $primary;
-                        background-clip: text;
-                        -webkit-text-fill-color: transparent;
+                        color: $secondary;
+                    }
+                }
+            }
+        }
+
+        .contactInfo {
+            ul {
+                list-style: none;
+
+                li {
+                    padding: 7px 0;
+                    display: flex;
+                    gap: 10px;
+
+                    .icon {
+                        color: #9CA3AF;
+                    }
+
+                    span {
+                        color: #9CA3AF;
+                    }
+
+                    a {
+                        color: #9CA3AF;
+                        text-decoration: none;
                     }
                 }
             }
@@ -124,12 +140,13 @@
                 margin: 0;
                 margin-bottom: 30px;
                 display: flex;
+                flex-wrap: wrap;
                 gap: 20px;
 
                 a {
-                    color: #fff;
+                    color: #9CA3AF;
                     text-decoration: none;
-                    font-size: 28px;
+                    font-size: 24px;
                 }
             }
 
@@ -149,8 +166,8 @@
     }
 
     .footer_bootom {
-        padding-top: 30px;
-        margin-top: 30px;
+        padding-top: 50px;
+        margin-top: 40px;
         display: flex;
         justify-content: space-between;
         border-top: 2px solid grey;
@@ -161,13 +178,12 @@
 
 
         .copyright {
-            font-size: 16px;
+            font-size: 18px;
             font-weight: 600;
-
-
+            color: #9CA3AF;
 
             @media (max-width: $md) {
-
+                font-size: 16px;
                 text-align: center;
             }
 
@@ -196,13 +212,15 @@
             a {
                 color: #fff;
                 text-decoration: none;
-                font-size: 16px;
+                font-size: 20px;
                 font-weight: 600;
 
-
+                @media (max-width: $xxl) {
+                    font-size: 18px;
+                }
 
                 @media (max-width: $md) {
-
+                    font-size: 16px;
                     text-align: center;
                 }
             }
@@ -216,11 +234,13 @@
 
         a {
             text-decoration: none;
-            color: #fff;
+            color: #9CA3AF;
 
             &:hover {
                 color: $primary;
             }
         }
     }
+
+
 }

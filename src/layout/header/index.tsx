@@ -1,120 +1,167 @@
-import Link from "next/link";
+import Head from "next/head";
 import styles from "./header.module.scss";
 import { Container } from "react-bootstrap";
 import { GiHamburgerMenu } from "react-icons/gi";
-import { useState } from "react";
-import NextImage from "@/hooks/NextImage";
-import Head from "next/head";
-import LanguageSwitcher from "@/modules/languageSwitch";
-import { FaFacebook, FaYoutube } from "react-icons/fa";
-import { RiInstagramFill } from "react-icons/ri";
-import { useTranslation } from "react-i18next";
+import Link from "next/link";
+import { useEffect, useRef, useState } from "react";
+import { useRouter } from "next/router";
+import { IoIosArrowDown } from "react-icons/io";
+import NextImage from "../../hooks/NextImage";
+import LanguageSwitcher from "../../modules/languageSwitch";
+import { useTranslation } from "next-i18next";
 import useLanguage from "@/hooks/useLanguage";
-import { FaXTwitter } from "react-icons/fa6";
+import { navTreeEN, navTreeBN, navTreeAR, NavItem } from "@/constants/navTree";
+
 export default function Header() {
-  const [show, setShow] = useState(false);
+  const { i18n, t } = useTranslation("common");
+  const [openDropdown, setOpenDropdown] = useState<string | null>(null);
+  const [showMenu, setShowMenu] = useState(false);
+  const router = useRouter();
+  const menuRef = useRef<HTMLDivElement>(null);
 
-  const toggleClass = () => {
-    setShow((prevState) => !prevState);
-  };
+  useEffect(() => {
+    const handleRouteChange = () => {
+      setShowMenu(false);
+      setOpenDropdown(null); // optional
+    };
 
-  const { t } = useTranslation();
+    router.events.on("routeChangeStart", handleRouteChange);
+    return () => {
+      router.events.off("routeChangeStart", handleRouteChange);
+    };
+  }, []);
+  useEffect(() => {
+    const handleClickOutside = (event: MouseEvent) => {
+      if (menuRef.current && !menuRef.current.contains(event.target as Node)) {
+        setShowMenu(false);
+        setOpenDropdown(null);
+      }
+    };
+
+    if (showMenu) {
+      document.addEventListener("mousedown", handleClickOutside);
+    }
+
+    return () => {
+      document.removeEventListener("mousedown", handleClickOutside);
+    };
+  }, [showMenu]);
 
   const isClient = useLanguage();
 
   if (!isClient) {
     return null;
   }
+
+  const toggleDropdown = (id: string) => {
+    setOpenDropdown((prev) => (prev === id ? null : id));
+  };
+
+  const isActive = (path: string) => router.pathname === path;
+
+  // Get language-specific dynamic data
+  const lang = i18n.language;
+  const navTree =
+    { en: navTreeEN, bn: navTreeBN, ar: navTreeAR }[lang] || navTreeEN;
+
+  const getDynamicChildren = (type: string) => {
+    // Since we don’t have tech/services data yet, return []
+    return [];
+  };
+
+  const renderNavItem = (item: NavItem) => {
+    const hasDropdown = item.dropdown || item.children || item.dynamic;
+    const children = item.dynamic
+      ? getDynamicChildren(item.dynamic)
+      : item.children;
+
+    if (hasDropdown && children) {
+      return (
+        <li
+          key={item.id}
+          className={`${styles.navItem} ${styles.dropdownMenu}`}
+        >
+          <Link href={item.link || "#"} className={styles.navLink}>
+            {item.title}
+          </Link>
+          <span
+            className={styles.arrow}
+            onClick={() => toggleDropdown(item.id)}
+          >
+            <IoIosArrowDown />
+          </span>
+          <div
+            className={`${styles.servicesWrapper} ${
+              openDropdown === item.id ? styles.dropShow : ""
+            }`}
+          >
+            {children.map((child) => (
+              <div className={styles.service} key={child.id}>
+                <Link
+                  className={`${
+                    isActive(child.link || "") ? styles.active : ""
+                  } ${styles.subNavLink}`}
+                  href={child.link || "#"}
+                >
+                  <h3 className={styles.name}>{child.title}</h3>
+                </Link>
+              </div>
+            ))}
+          </div>
+        </li>
+      );
+    }
+
+    return (
+      <li key={item.id} className={styles.navItem}>
+        <Link
+          className={`${isActive(item.link || "") ? styles.active : ""} ${
+            styles.navLink
+          }`}
+          href={item.link || "#"}
+        >
+          {item.title}
+        </Link>
+      </li>
+    );
+  };
+
   return (
     <>
       <Head>
-        <link
-          rel="icon"
-          href="/images/logo.jpg"
-          type="image/svg+xml"
-          data-next-head=""
-        ></link>
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <link rel="icon" href="/images/logo.png" type="image/png" />
       </Head>
-      <header className={styles.header}>
-        <div className={styles.top}>
-          <Container>
-            <div className={styles.topWrapper}>
-              <div className={styles.social}>
-                <Link href="">
-                  <FaFacebook />
-                </Link>
-                <Link href="">
-                  <RiInstagramFill />
-                </Link>
-                <Link href="">
-                  <FaYoutube />
-                </Link>
-                <Link href="">
-                  <FaXTwitter />
-                </Link>
-              </div>
-              <LanguageSwitcher />
+
+      <header id="header" className={`${styles.header} `}>
+        <Container>
+          <div className={styles.headWrapper}>
+            <div className={styles.logo}>
+              <Link href="/">
+                <NextImage src="/images/logo.png" alt="Jionex" />
+              </Link>
             </div>
-          </Container>
-        </div>
-        <div className={styles.wrapper}>
-          <Container className={styles.container}>
-            <div className={styles.nav}>
-              <div className={styles.logo}>
-                <Link href="/">
-                  <NextImage src={"/images/logo2.png"} alt={""} />
-                </Link>
+
+            <div className={styles.menuParent} ref={menuRef}>
+              <div className={`${showMenu ? styles.show : ""} ${styles.menu}`}>
+                <ul className={styles.ul}>{navTree.map(renderNavItem)}</ul>
               </div>
-              <ul className={`${show ? styles.show : ""} ${styles.menu}`}>
-                <li className={styles.navItem}>
-                  <Link className={styles.navLink} href="/about">
-                    {t("About")}
-                  </Link>
-                </li>
-                <li className={styles.navItem}>
-                  <Link className={styles.navLink} href="/careers">
-                    {t("Careers")}
-                  </Link>
-                </li>
-                <li className={styles.navItem}>
-                  <Link className={styles.navLink} href="/members">
-                    {t("Members")}
-                  </Link>
-                </li>
-                <li className={styles.navItem}>
-                  <Link className={styles.navLink} href="/events">
-                    {t("Events")}
-                  </Link>
-                </li>
-                <li className={styles.navItem}>
-                  <Link className={styles.navLink} href="/blogs">
-                    {t("Blogs")}
-                  </Link>
-                </li>
-                <li className={styles.navItem}>
-                  <Link className={styles.navLink} href="/">
-                    {t("Projects")}
-                  </Link>
-                </li>
-                <li className={styles.navItem}>
-                  <Link className={styles.navLink} href="">
-                    {t("Contact")}
-                  </Link>
-                </li>
-              </ul>
-              <div className={styles.btns}>
-                <div className={styles.contact}>
-                  {/* <Link className={styles.navLink} href="/donation">
-                    {t("Donation")}
-                  </Link> */}
+
+              <div className={styles.languageSelector}>
+                <div className={styles.donation}>
+                  <Link href="/">{t("Donation")}</Link>
                 </div>
-                <div className={styles.hamMenu} onClick={toggleClass}>
+                <LanguageSwitcher />
+                <div
+                  className={styles.hamMenu}
+                  onClick={() => setShowMenu(!showMenu)}
+                >
                   <GiHamburgerMenu />
                 </div>
               </div>
             </div>
-          </Container>
-        </div>
+          </div>
+        </Container>
       </header>
     </>
   );

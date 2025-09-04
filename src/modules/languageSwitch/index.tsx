@@ -1,8 +1,8 @@
 import { useState, useEffect } from "react";
 import { useRouter } from "next/router";
-import { useTranslation } from "react-i18next"; // Import i18next hook
+import { useTranslation } from "next-i18next"; // Import i18next hook
 import styles from "./switch.module.scss"; // Import styles for the switcher
-import NextImage from "@/hooks/NextImage";
+import NextImage from "../../hooks/NextImage";
 
 const LanguageSwitcher = () => {
   const { i18n } = useTranslation(); // Access the i18n instance
@@ -20,20 +20,21 @@ const LanguageSwitcher = () => {
     setIsOpen(!isOpen);
   };
 
+  const isArabic = i18n.language === "ar";
   // Handle language change using i18next
   const handleLanguageChange = (lang: string) => {
     i18n.changeLanguage(lang);
     setIsOpen(false);
     router.push(router.asPath, router.asPath, {
-      locale: lang === "bn" ? undefined : lang,
-      scroll: false,
+      locale: lang,
+      scroll: false, // 🔥 This prevents page scroll to top
     });
   };
 
   // Language options with flags
   const languageOptions = [
-    { code: "bn", name: "বাংলা", flag: "/images/bn.png" },
     { code: "en", name: "English", flag: "/images/en.png" },
+    { code: "bn", name: "বাংলা", flag: "/images/bn.png" },
     { code: "ar", name: "العربية", flag: "/images/ar.png" },
   ];
 
@@ -59,20 +60,18 @@ const LanguageSwitcher = () => {
         />
       </div>
       {isOpen && (
-        <ul className={styles.languageDropdown}>
+        <ul
+          className={`${styles.languageDropdown} ${
+            isArabic ? styles.arabic : ""
+          }`}
+        >
           {languageOptions.map(({ code, name, flag }) => (
             <li
               key={code}
               className={styles.languageOption}
               onClick={() => handleLanguageChange(code)}
             >
-              <NextImage
-                src={flag}
-                alt={name}
-                width={20} // Adjust width and height for flags
-                height={15}
-                style={{ marginRight: "8px" }}
-              />
+              <NextImage src={flag} alt={name} />
               {name}
             </li>
           ))}
