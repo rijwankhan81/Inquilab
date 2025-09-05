@@ -15,7 +15,7 @@ export default function Donation() {
     <>
       <section className={styles.donation}>
         <Container>
-          <h2>{t("Donate to Muslim Hands")}</h2>
+          <h2>{t("Donate to Inqilab Moncho")}</h2>
         </Container>
         <div className={styles.wrapper}>
           <Container>
@@ -37,10 +37,9 @@ export default function Donation() {
               <div className={styles.col}>
                 <div className={styles.donationName}>
                   <select name="" id="">
-                    <option value="">{t("Sadaqa")}</option>
-                    <option value="">{t("Zakat")}</option>
-                    <option value="">{t("General Charity")}</option>
-                    <option value="">{t("Interest")}</option>
+                    <option value="">{t("Inqilab Moncho")}</option>
+                    <option value="">{t("Inqilab Publications")}</option>
+                    <option value="">{t("Inqilab Cultural Center")}</option>
                   </select>
                 </div>
               </div>

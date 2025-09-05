@@ -92,6 +92,9 @@ export default function Shop() {
       <Header />
       <main className={styles.page}>
         <Container className={styles.container}>
+          <div className={styles.head}>
+            <h2>{t("Inqilab Cultural Center")}</h2>
+          </div>
           <div className={styles.pageWrapper}>
             <div className={styles.categories}>
               <div className={styles.categoriesHeader}>
