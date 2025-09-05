@@ -1,0 +1,39 @@
+@use "/src/styles/var" as *;
+
+.wrapper {
+    position: relative;
+    display: inline-block;
+    max-width: 100%;
+}
+
+.text {
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    -webkit-line-clamp: 2; // overridden by props
+    position: relative;
+    line-height: 1.5;
+}
+
+.expanded {
+    display: block;
+    -webkit-line-clamp: unset;
+}
+
+.fade {
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    background: #fff;
+}
+
+.toggle {
+    background: none;
+    border: none;
+    color: $primary;
+    font-weight: 600;
+    cursor: pointer;
+    padding: 0;
+    font-size: 12px;
+    padding-left: 3px;
+}

@@ -70,7 +70,16 @@ export default function Footer() {
           <div className={styles.wrapper}>
             <div className={styles.inner_wrapper}>
               <Link className={styles.logo} href="/">
-                <NextImage src="/images/logo.png" alt="" />
+                <NextImage
+                  className={styles.one}
+                  src="/images/logo.png"
+                  alt=""
+                />
+                <NextImage
+                  className={styles.two}
+                  src="/images/logo2.png"
+                  alt=""
+                />
               </Link>
               <p>{t("Footer Title")}</p>
               <div className={styles.connect}>

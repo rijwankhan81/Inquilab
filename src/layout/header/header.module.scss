@@ -15,6 +15,14 @@
     background: #ffffff;
     color: #000;
 
+    .container {
+
+
+        @media (min-width: 992px) and (max-width: 1199px) {
+            max-width: 1180px;
+        }
+    }
+
     .headWrapper {
         display: flex;
         align-items: center;
@@ -25,6 +33,11 @@
             display: flex;
         }
 
+        @media(max-width:$sm) {
+            display: flex;
+            gap: 10px;
+        }
+
         .logo {
             h2 {
                 color: $primary;
@@ -32,12 +45,31 @@
                 font-weight: 700;
             }
 
-            img {
+            a {
+                display: flex;
+                align-items: center;
+                gap: 10px;
+
+                @media(max-width:$sm) {
+                    gap: 5px;
+                }
+            }
+
+            .one {
                 width: 60px;
                 height: auto;
 
                 @media(max-width:$sm) {
                     width: 40px;
+                }
+            }
+
+            .two {
+                max-width: 100px;
+                height: auto;
+
+                @media(max-width:$sm) {
+                    max-width: 85px;
                 }
             }
         }
@@ -108,6 +140,10 @@
 
                 .navItem {
                     padding: 20px 10px;
+
+                    @media (min-width: 992px) and (max-width: 1050px) {
+                        padding: 20px 6px;
+                    }
 
                     @media(max-width:$lg) {
                         padding: 10px;
@@ -265,27 +301,6 @@
         }
     }
 
-    .getQuote {
-        @media(max-width:$lg) {
-            display: none;
-        }
-
-        a {
-            display: inline-block;
-            background: linear-gradient(225deg, $secondary, $primary);
-            font-weight: 600;
-            color: #fff;
-            text-decoration: none;
-            transition: all .25s ease-in-out;
-            position: relative;
-            animation: btn 2s linear alternate;
-            padding: 20px 36px;
-            border-radius: 12px;
-            font-size: 14px;
-            border: 0;
-        }
-    }
-
     .languageSelector {
         display: flex;
         align-items: center;
@@ -304,18 +319,31 @@
 
 
         .donation {
+            border: 2px solid $primary;
+            border-radius: 100px;
+            overflow: hidden;
+
             a {
                 display: inline-block;
                 text-decoration: none;
-                background: $primary;
-                color: #fff;
-                padding: 8px 20px;
-                border-radius: 100px;
+                padding: 8px 12px;
+
+                &:nth-child(2) {
+                    border-left: 2px solid $primary;
+                }
 
                 @media(max-width:$sm) {
-                    font-size: 14px;
-                    padding: 6px 14px;
+                    font-size: 12px;
+                    padding: 5px 10px;
                 }
+
+            }
+
+
+
+            .active {
+                background: $primary;
+                color: #fff;
             }
         }
 

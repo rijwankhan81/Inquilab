@@ -8,27 +8,9 @@ import { serverSideTranslations } from "next-i18next/serverSideTranslations";
 import NextImage from "@/hooks/NextImage";
 import useLanguage from "@/hooks/useLanguage";
 import { useTranslation } from "react-i18next";
-import { uniqueAR, uniqueBN, uniqueEN } from "@/constants/unique";
-import GetInvolved from "@/modules/getInvolved";
 export default function Home() {
   const isClient = useLanguage();
-  const { i18n, t } = useTranslation();
-  const selectedLanguage = i18n.language;
-
-  let unique;
-
-  switch (selectedLanguage) {
-    case "en":
-      unique = uniqueEN;
-
-      break;
-    case "ar":
-      unique = uniqueAR;
-
-      break;
-    default:
-      unique = uniqueBN;
-  }
+  const { t } = useTranslation();
 
   if (!isClient) {
     return null;
@@ -36,17 +18,17 @@ export default function Home() {
   return (
     <>
       <Head>
-        <title>About</title>
+        <title>About Us | Inqilab Moncho</title>
       </Head>
       <Header />
       <main className={styles.page}>
         <section className={styles.banner}>
           <Container>
             <div className={styles.content}>
-              <h1>{t("About Banner Title")}</h1>
-              <p>{t("About Banner Des")}</p>
-              <p>{t("About Banner Des Two")}</p>
-              <p>{t("About Banner Des Three")}</p>
+              <div className={styles.wrapper}>
+                <h1>{t("About Us")}</h1>
+                <p>{t("About Us Des")}</p>
+              </div>
             </div>
           </Container>
         </section>
@@ -54,60 +36,34 @@ export default function Home() {
           <Container className={styles.container}>
             <div className={styles.row}>
               <div className={styles.image}>
-                <NextImage src={"/images/image6.jpg"} alt={""} />
+                <NextImage src={"/images/image1.jpg"} alt={""} />
               </div>
               <div className={styles.content}>
-                <h2>{t("Our Story")}</h2>
-                <p>
-                  {t("Our Story Des")} <br />
-                  {t("Our Story Des Two")} <br />
-                  {t("Our Story Des Three")}
-                </p>
+                <p>{t("About Us Des Two")}</p>
+                <p>{t("About Us Des Three")}</p>
               </div>
-            </div>
-          </Container>
-        </section>
-        <section className={styles.unique} id="key">
-          <Container className={styles.container}>
-            <div className={styles.head}>
-              <h2>{t("What Makes Us Unique")}</h2>
-            </div>
-            <div className={styles.row}>
-              {unique.map((category, index) => (
-                <div key={index} className={styles.wrapper}>
-                  <div className={styles.image}>
-                    <NextImage src={category.image} alt={""} />
-                  </div>
-                  <div className={styles.content}>
-                    <h3>{category.name}</h3>
-                    <p>{category.description}</p>
-                  </div>
-                </div>
-              ))}
             </div>
           </Container>
         </section>
 
-        <section className={styles.ahead}>
+        <section className={styles.objective}>
           <Container className={styles.container}>
-            <div className={styles.row}>
-              <div className={styles.image}>
-                <NextImage src={"/images/image7.jpg"} alt={""} />
-              </div>
-              <div className={styles.content}>
-                <h2>{t("Looking Ahead")}</h2>
-                <p>{t("Our focus today is to")}</p>
-                <ul>
-                  <li>{t("Looking Ahead One")}</li>
-                  <li>{t("Looking Ahead Two")}</li>
-                  <li>{t("Looking Ahead Three")}</li>
-                  <li>{t("Looking Ahead Four")}</li>
-                </ul>
-              </div>
+            <div className={styles.head}>
+              <h2>{t("Objectives and Aims of Inqilab Moncho")}</h2>
+            </div>
+            <div className={styles.video}>
+              <iframe
+                width="1110"
+                height="624"
+                src="https://www.youtube.com/embed/SUgVNoqFG-0"
+                title="ইনকিলাব মঞ্চ কি? কি এর লক্ষ্য উদ্দেশ্য? Inqilab Moncho ki || inqilab moncho goals"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                referrerPolicy="strict-origin-when-cross-origin"
+                allowFullScreen
+              ></iframe>
             </div>
           </Container>
         </section>
-        <GetInvolved />
       </main>
       <Footer />
     </>

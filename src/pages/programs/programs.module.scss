@@ -83,7 +83,13 @@
                 font-weight: 600;
                 margin-bottom: 10px;
                 font-size: 16px;
-
+                text-align: center;
+                display: -webkit-box;
+                -webkit-line-clamp: 1;
+                /* Number of lines to display */
+                -webkit-box-orient: vertical;
+                overflow: hidden;
+                text-overflow: ellipsis;
             }
 
             p {

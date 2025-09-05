@@ -132,11 +132,20 @@ export default function Header() {
       </Head>
 
       <header id="header" className={styles.header}>
-        <Container>
+        <Container className={styles.container}>
           <div className={styles.headWrapper}>
             <div className={styles.logo}>
               <Link href="/">
-                <NextImage src="/images/logo.png" alt="Jionex" />
+                <NextImage
+                  className={styles.one}
+                  src="/images/logo.png"
+                  alt=""
+                />
+                <NextImage
+                  className={styles.two}
+                  src="/images/logo2.png"
+                  alt=""
+                />
               </Link>
             </div>
 
@@ -147,7 +156,20 @@ export default function Header() {
 
               <div className={styles.languageSelector}>
                 <div className={styles.donation}>
-                  <Link href="/">{t("Donation")}</Link>
+                  <Link
+                    className={
+                      router.pathname === "/donation" ? styles.active : ""
+                    }
+                    href="/donation"
+                  >
+                    {t("Donation")}
+                  </Link>
+                  <Link
+                    className={router.pathname === "/shop" ? styles.active : ""}
+                    href="/shop"
+                  >
+                    {t("Shop")}
+                  </Link>
                 </div>
                 <LanguageSwitcher />
                 <div

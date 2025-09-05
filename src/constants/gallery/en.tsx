@@ -139,8 +139,8 @@ export const galleryEN = [
   },
   {
     id: 16,
-    title: "Vision & Mission of Inquilab Manch",
-    description: "Vision & Mission of Inquilab Manch",
+    title: "Vision & Mission of Inqilab Manch",
+    description: "Vision & Mission of Inqilab Manch",
     date: null,
     location: null,
     imageUrl: "/images/gallery/526ec850b-1024x576.jpg",

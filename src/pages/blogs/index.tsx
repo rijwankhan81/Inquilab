@@ -8,26 +8,28 @@ import { serverSideTranslations } from "next-i18next/serverSideTranslations";
 import NextImage from "@/hooks/NextImage";
 import useLanguage from "@/hooks/useLanguage";
 import { useTranslation } from "react-i18next";
-import GetInvolved from "@/modules/getInvolved";
-import { blogsEN, blogsAR, blogsBN } from "@/constants/blogs";
+import Link from "next/link";
+import { galleryAR } from "@/constants/gallery/ar";
+import { galleryBN } from "@/constants/gallery/bn";
+import { galleryEN } from "@/constants/gallery/en";
 export default function Blogs() {
   const isClient = useLanguage();
   const { i18n, t } = useTranslation();
   const selectedLanguage = i18n.language;
 
-  let blogs;
+  let gallery;
 
   switch (selectedLanguage) {
     case "en":
-      blogs = blogsEN;
+      gallery = galleryEN;
 
       break;
     case "ar":
-      blogs = blogsAR;
+      gallery = galleryAR;
 
       break;
     default:
-      blogs = blogsBN;
+      gallery = galleryBN;
   }
 
   if (!isClient) {
@@ -36,52 +38,38 @@ export default function Blogs() {
   return (
     <>
       <Head>
-        <title>Blogs</title>
+        <title>Blogs | Inqilab Moncho</title>
       </Head>
       <Header />
       <main className={styles.page}>
-        <section className={styles.banner}>
-          <Container className={styles.container}>
-            <div className={styles.content}>
-              <h1>{t("Blogs Banner Title")}</h1>
-              <p>
-                {t("Blogs Banner Des")}
-                <br />
-                {t("Blogs Banner Des Two")}
-                <br />
-                {t("Blogs Banner Des Three")}
-              </p>
-            </div>
-          </Container>
-        </section>
-
         <section className={styles.blogs}>
-          <Container>
-            <div className={styles.head}>
-              <h2>{t("Blogs")}</h2>
-            </div>
-            <div className={styles.blogsWrapper}>
-              {blogs.map((blog) => (
-                <div className={styles.blog} key={blog.id}>
+          <Container className={styles.container}>
+            <div className={styles.row}>
+              {gallery.map((category, index) => (
+                <div key={index} className={styles.wrapper}>
                   <div className={styles.image}>
-                    <NextImage src={blog.image} alt={blog.name} />
+                    <NextImage src={category.imageUrl} alt={""} />
                   </div>
                   <div className={styles.content}>
-                    <div className={styles.title}>
-                      <h3>{blog.date}</h3>
-                      <h4>{blog.name}</h4>
-                    </div>
-                    <div className={styles.des}>
-                      <span>{blog.description}</span>
-                    </div>
+                    <h3>{category.title}</h3>
+                    {/* <p>{category.description}</p>
+                    {category.location && (
+                      <h5 className={styles.location}>
+                        <IoLocationSharp /> {category.location}
+                      </h5>
+                    )} */}
+                  </div>
+                  {category.date && (
+                    <h4 className={styles.date}>{category.date}</h4>
+                  )}
+                  <div className={styles.btn}>
+                    <Link href="">{t("Read More")}</Link>
                   </div>
                 </div>
               ))}
             </div>
           </Container>
         </section>
-
-        <GetInvolved />
       </main>
       <Footer />
     </>

@@ -5,32 +5,30 @@ import Header from "@/layout/header";
 import { Container } from "react-bootstrap";
 import { GetStaticProps } from "next";
 import { serverSideTranslations } from "next-i18next/serverSideTranslations";
-import NextImage from "@/hooks/NextImage";
 import useLanguage from "@/hooks/useLanguage";
 import { useTranslation } from "react-i18next";
-import { IoLocationSharp } from "react-icons/io5";
-import Link from "next/link";
-import { galleryAR } from "@/constants/gallery/ar";
-import { galleryBN } from "@/constants/gallery/bn";
-import { galleryEN } from "@/constants/gallery/en";
+import { newsAR } from "@/constants/news/ar";
+import { newsBN } from "@/constants/news/bn";
+import { newsEN } from "@/constants/news/en";
+import ReadMore from "@/modules/readmore";
 export default function News() {
   const isClient = useLanguage();
-  const { i18n, t } = useTranslation();
+  const { i18n } = useTranslation();
   const selectedLanguage = i18n.language;
 
-  let gallery;
+  let news;
 
   switch (selectedLanguage) {
     case "en":
-      gallery = galleryEN;
+      news = newsEN;
 
       break;
     case "ar":
-      gallery = galleryAR;
+      news = newsAR;
 
       break;
     default:
-      gallery = galleryBN;
+      news = newsBN;
   }
 
   if (!isClient) {
@@ -39,32 +37,27 @@ export default function News() {
   return (
     <>
       <Head>
-        <title>News Gallery | Inquilab Moncho</title>
+        <title>News Gallery | Inqilab Moncho</title>
       </Head>
       <Header />
       <main className={styles.page}>
         <section className={styles.gallery}>
           <Container className={styles.container}>
             <div className={styles.row}>
-              {gallery.map((category, index) => (
+              {news.map((category, index) => (
                 <div key={index} className={styles.wrapper}>
-                  <div className={styles.image}>
-                    <NextImage src={category.imageUrl} alt={""} />
-                  </div>
                   <div className={styles.content}>
-                    <h3>{category.title}</h3>
-                    <p>{category.description}</p>
-                    {category.location && (
-                      <h5 className={styles.location}>
-                        <IoLocationSharp /> {category.location}
-                      </h5>
-                    )}
+                    <h3>
+                      <ReadMore text={category.title} maxLines={1} />
+                    </h3>
                   </div>
-                  {category.date && (
-                    <h4 className={styles.date}>{category.date}</h4>
-                  )}
-                  <div className={styles.btn}>
-                    <Link href="">{t("Read More")}</Link>
+                  <div className={styles.image}>
+                    <iframe
+                      src={category.videoUrl}
+                      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                      referrerPolicy="strict-origin-when-cross-origin"
+                      allowFullScreen
+                    ></iframe>
                   </div>
                 </div>
               ))}

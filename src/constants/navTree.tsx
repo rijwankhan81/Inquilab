@@ -8,7 +8,7 @@ export type NavItem = {
 };
 
 export const navTreeEN: NavItem[] = [
-  { id: "about", title: "About Us", link: "/#about" },
+  { id: "about", title: "About Us", link: "/about" },
   {
     id: "cultural",
     title: "Cultural Center",
@@ -34,18 +34,18 @@ export const navTreeEN: NavItem[] = [
     title: "Programs",
     link: "/programs",
   },
-  { id: "publications", title: "Publications", link: "/#publications" },
-  { id: "blog", title: "Blog", link: "/#blog" },
+  { id: "publications", title: "Publications", link: "/publications" },
+  { id: "blog", title: "Blog", link: "/blogs" },
   { id: "contact", title: "Contact", link: "/#contact" },
-  {
-    id: "shop",
-    title: "Shop",
-    link: "/shop",
-  },
-  { id: "news", title: "News", link: "/#news" },
+  // {
+  //   id: "shop",
+  //   title: "Shop",
+  //   link: "/shop",
+  // },
+  { id: "news", title: "News", link: "/news" },
 ];
 export const navTreeBN: NavItem[] = [
-  { id: "about", title: "আমাদের সম্পর্কে", link: "/#about" },
+  { id: "about", title: "আমাদের সম্পর্কে", link: "/about" },
   {
     id: "cultural",
     title: "কালচারাল সেন্টার",
@@ -71,19 +71,19 @@ export const navTreeBN: NavItem[] = [
     title: "প্রোগ্রাম সমূহ",
     link: "/programs",
   },
-  { id: "publications", title: "প্রকাশনা", link: "/#publications" },
-  { id: "blog", title: "ব্লগ", link: "/#blog" },
+  { id: "publications", title: "প্রকাশনা", link: "/publications" },
+  { id: "blog", title: "ব্লগ", link: "/blogs" },
   { id: "contact", title: "যোগাযোগ", link: "/#contact" },
-  {
-    id: "shop",
-    title: "শপ",
-    link: "/shop",
-  },
-  { id: "news", title: "নিউজ", link: "/#news" },
+  // {
+  //   id: "shop",
+  //   title: "শপ",
+  //   link: "/shop",
+  // },
+  { id: "news", title: "নিউজ", link: "/news" },
 ];
 
 export const navTreeAR: NavItem[] = [
-  { id: "about", title: "من نحن", link: "/#about" },
+  { id: "about", title: "من نحن", link: "/about" },
   {
     id: "cultural",
     title: "المركز الثقافي",
@@ -109,13 +109,13 @@ export const navTreeAR: NavItem[] = [
     title: "البرامج",
     link: "/programs",
   },
-  { id: "publications", title: "الإصدارات", link: "/#publications" },
-  { id: "blog", title: "المدونة", link: "/#blog" },
+  { id: "publications", title: "الإصدارات", link: "/publications" },
+  { id: "blog", title: "المدونة", link: "/blogs" },
   { id: "contact", title: "اتصل بنا", link: "/#contact" },
-  {
-    id: "shop",
-    title: "المتجر",
-    link: "/shop",
-  },
-  { id: "news", title: "الأخبار", link: "/#news" },
+  // {
+  //   id: "shop",
+  //   title: "المتجر",
+  //   link: "/shop",
+  // },
+  { id: "news", title: "الأخبار", link: "/news" },
 ];

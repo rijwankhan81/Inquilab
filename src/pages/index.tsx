@@ -8,7 +8,6 @@ import Head from "next/head";
 import Link from "next/link";
 import { Container } from "react-bootstrap";
 import { useTranslation } from "react-i18next";
-import { IoLocationSharp } from "react-icons/io5";
 import { serverSideTranslations } from "next-i18next/serverSideTranslations";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Autoplay, Navigation } from "swiper/modules";
@@ -20,25 +19,33 @@ import { programsEN } from "@/constants/programs/en";
 import { galleryAR } from "@/constants/gallery/ar";
 import { galleryBN } from "@/constants/gallery/bn";
 import { galleryEN } from "@/constants/gallery/en";
+import { newsAR } from "@/constants/news/ar";
+import { newsBN } from "@/constants/news/bn";
+import { newsEN } from "@/constants/news/en";
+import ReadMore from "@/modules/readmore";
+import Donation from "@/modules/donation";
 
 export default function Home() {
   const { i18n, t } = useTranslation();
   const selectedLanguage = i18n.language;
 
-  let gallery, programs;
+  let gallery, programs, news;
 
   switch (selectedLanguage) {
     case "en":
       gallery = galleryEN;
       programs = programsEN;
+      news = newsEN;
       break;
     case "ar":
       gallery = galleryAR;
       programs = programsAR;
+      news = newsAR;
       break;
     default:
       gallery = galleryBN;
       programs = programsBN;
+      news = newsBN;
   }
 
   const isClient = useLanguage();
@@ -49,7 +56,7 @@ export default function Home() {
   return (
     <>
       <Head>
-        <title>Welcome to Inquilab Moncho</title>
+        <title>Welcome to Inqilab Moncho</title>
       </Head>
       <Header />
       <main className={styles.page}>
@@ -100,13 +107,21 @@ export default function Home() {
             </Swiper>
           </Container>
         </section>
-
+        <Donation />
         <section className={styles.about}>
           <Container className={styles.container}>
             <div className={styles.row}>
               <div className={styles.image}>
-                <NextImage src={"/images/logo.png"} alt={""} />
-                <NextImage src={"/images/logo2.png"} alt={""} />
+                <NextImage
+                  className={styles.one}
+                  src={"/images/logo.png"}
+                  alt={""}
+                />
+                <NextImage
+                  className={styles.two}
+                  src={"/images/logo2.png"}
+                  alt={""}
+                />
               </div>
               <div className={styles.content}>
                 <h2>{t("Who We Are")}</h2>
@@ -124,17 +139,17 @@ export default function Home() {
               <h2>{t("Programs")}</h2>
             </div>
             <div className={styles.row}>
-              {programs.slice(0, 6).map((category, index) => (
+              {programs.slice(0, 3).map((category, index) => (
                 <div key={index} className={styles.wrapper}>
                   <div className={styles.image}>
                     <NextImage src={category.imageUrl} alt={""} />
                   </div>
                   <div className={styles.content}>
                     <h3>{category.title}</h3>
-                    <p>{category.description}</p>
+                    {/* <p>{category.description}</p>
                     <h5 className={styles.location}>
                       <IoLocationSharp /> {category.location}
-                    </h5>
+                    </h5> */}
                   </div>
                   <h4 className={styles.date}>{category.date}</h4>
                   <div className={styles.btn}>
@@ -154,19 +169,48 @@ export default function Home() {
               <h2>{t("News Gallery")}</h2>
             </div>
             <div className={styles.row}>
-              {gallery.slice(0, 6).map((category, index) => (
+              {news.slice(0, 3).map((category, index) => (
+                <div key={index} className={styles.wrapper}>
+                  <div className={styles.content}>
+                    <h3>
+                      <ReadMore text={category.title} maxLines={1} />
+                    </h3>
+                  </div>
+                  <div className={styles.image}>
+                    <iframe
+                      src={category.videoUrl}
+                      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                      referrerPolicy="strict-origin-when-cross-origin"
+                      allowFullScreen
+                    ></iframe>
+                  </div>
+                </div>
+              ))}
+            </div>
+            <div className={styles.seebtn}>
+              <Link href="/news">{t("See all news gallery")}</Link>
+            </div>
+          </Container>
+        </section>
+        <section className={styles.blogs}>
+          <Container className={styles.container}>
+            <div className={styles.head}>
+              <h2>{t("Latest Blogs")}</h2>
+            </div>
+            <div className={styles.row}>
+              {gallery.slice(0, 3).map((category, index) => (
                 <div key={index} className={styles.wrapper}>
                   <div className={styles.image}>
                     <NextImage src={category.imageUrl} alt={""} />
                   </div>
                   <div className={styles.content}>
                     <h3>{category.title}</h3>
-                    <p>{category.description}</p>
+                    {/* <p>{category.description}</p>
                     {category.location && (
                       <h5 className={styles.location}>
                         <IoLocationSharp /> {category.location}
                       </h5>
-                    )}
+                    )} */}
                   </div>
                   {category.date && (
                     <h4 className={styles.date}>{category.date}</h4>
@@ -179,7 +223,7 @@ export default function Home() {
               ))}
             </div>
             <div className={styles.seebtn}>
-              <Link href="/news">{t("See all news gallery")}</Link>
+              <Link href="/blogs">{t("See all Blogs")}</Link>
             </div>
           </Container>
         </section>

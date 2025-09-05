@@ -1,5 +1,5 @@
 import Footer from "@/layout/footer";
-import styles from "./programs.module.scss";
+import styles from "./publication.module.scss";
 import Head from "next/head";
 import Header from "@/layout/header";
 import { Container } from "react-bootstrap";
@@ -8,28 +8,30 @@ import { serverSideTranslations } from "next-i18next/serverSideTranslations";
 import NextImage from "@/hooks/NextImage";
 import useLanguage from "@/hooks/useLanguage";
 import { useTranslation } from "react-i18next";
-import { programsAR } from "@/constants/programs/ar";
-import { programsBN } from "@/constants/programs/bn";
-import { programsEN } from "@/constants/programs/en";
-import Link from "next/link";
-export default function Programs() {
+import {
+  publicationsEN,
+  publicationsAR,
+  publicationsBN,
+} from "@/constants/publications";
+import { FaBangladeshiTakaSign } from "react-icons/fa6";
+export default function Publication() {
   const isClient = useLanguage();
   const { i18n, t } = useTranslation();
   const selectedLanguage = i18n.language;
 
-  let programs;
+  let publications;
 
   switch (selectedLanguage) {
     case "en":
-      programs = programsEN;
+      publications = publicationsEN;
 
       break;
     case "ar":
-      programs = programsAR;
+      publications = publicationsAR;
 
       break;
     default:
-      programs = programsBN;
+      publications = publicationsBN;
   }
 
   if (!isClient) {
@@ -38,28 +40,31 @@ export default function Programs() {
   return (
     <>
       <Head>
-        <title>Programs | Inqilab Moncho</title>
+        <title>Publications | Inqilab Moncho</title>
       </Head>
       <Header />
       <main className={styles.page}>
         <section className={styles.programs}>
           <Container className={styles.container}>
             <div className={styles.row}>
-              {programs.map((category, index) => (
+              {publications.map((category, index) => (
                 <div key={index} className={styles.wrapper}>
                   <div className={styles.image}>
                     <NextImage src={category.imageUrl} alt={""} />
                   </div>
                   <div className={styles.content}>
                     <h3>{category.title}</h3>
-                    {/* <p>{category.description}</p>
-                    <h5 className={styles.location}>
-                      <IoLocationSharp /> {category.location}
-                    </h5> */}
-                  </div>
-                  <h4 className={styles.date}>{category.date}</h4>
-                  <div className={styles.btn}>
-                    <Link href="">{t("Read More")}</Link>
+                    <h4>
+                      <span>{t("Edited by")}:</span> {category.editedby}
+                    </h4>
+                    <h5>
+                      <span>{t("Price")}: </span> <FaBangladeshiTakaSign />{" "}
+                      {category.price}
+                    </h5>
+                    <h6>
+                      <span>{t("Available at")}: </span>
+                      {category.available}
+                    </h6>
                   </div>
                 </div>
               ))}
