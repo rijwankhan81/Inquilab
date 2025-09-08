@@ -59,7 +59,9 @@ export default function Programs() {
                   </div>
                   <h4 className={styles.date}>{category.date}</h4>
                   <div className={styles.btn}>
-                    <Link href="">{t("Read More")}</Link>
+                    <Link href={`/programs/${category.slug}`}>
+                      {t("Read More")}
+                    </Link>
                   </div>
                 </div>
               ))}

@@ -9,27 +9,27 @@ import NextImage from "@/hooks/NextImage";
 import useLanguage from "@/hooks/useLanguage";
 import { useTranslation } from "react-i18next";
 import Link from "next/link";
-import { galleryAR } from "@/constants/gallery/ar";
-import { galleryBN } from "@/constants/gallery/bn";
-import { galleryEN } from "@/constants/gallery/en";
+import { blogsAR } from "@/constants/blogs/ar";
+import { blogsEN } from "@/constants/blogs/en";
+import { blogsBN } from "@/constants/blogs/bn";
 export default function Blogs() {
   const isClient = useLanguage();
   const { i18n, t } = useTranslation();
   const selectedLanguage = i18n.language;
 
-  let gallery;
+  let blogs;
 
   switch (selectedLanguage) {
     case "en":
-      gallery = galleryEN;
+      blogs = blogsEN;
 
       break;
     case "ar":
-      gallery = galleryAR;
+      blogs = blogsAR;
 
       break;
     default:
-      gallery = galleryBN;
+      blogs = blogsBN;
   }
 
   if (!isClient) {
@@ -45,7 +45,7 @@ export default function Blogs() {
         <section className={styles.blogs}>
           <Container className={styles.container}>
             <div className={styles.row}>
-              {gallery.map((category, index) => (
+              {blogs.map((category, index) => (
                 <div key={index} className={styles.wrapper}>
                   <div className={styles.image}>
                     <NextImage src={category.imageUrl} alt={""} />
@@ -63,7 +63,9 @@ export default function Blogs() {
                     <h4 className={styles.date}>{category.date}</h4>
                   )}
                   <div className={styles.btn}>
-                    <Link href="">{t("Read More")}</Link>
+                    <Link href={`/blogs/${category.slug}`}>
+                      {t("Read More")}
+                    </Link>
                   </div>
                 </div>
               ))}

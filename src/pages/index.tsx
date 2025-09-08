@@ -16,9 +16,9 @@ import "swiper/css/navigation";
 import { programsAR } from "@/constants/programs/ar";
 import { programsBN } from "@/constants/programs/bn";
 import { programsEN } from "@/constants/programs/en";
-import { galleryAR } from "@/constants/gallery/ar";
-import { galleryBN } from "@/constants/gallery/bn";
-import { galleryEN } from "@/constants/gallery/en";
+import { blogsAR } from "@/constants/blogs/ar";
+import { blogsBN } from "@/constants/blogs/bn";
+import { blogsEN } from "@/constants/blogs/en";
 import { newsAR } from "@/constants/news/ar";
 import { newsBN } from "@/constants/news/bn";
 import { newsEN } from "@/constants/news/en";
@@ -29,21 +29,21 @@ export default function Home() {
   const { i18n, t } = useTranslation();
   const selectedLanguage = i18n.language;
 
-  let gallery, programs, news;
+  let blogs, programs, news;
 
   switch (selectedLanguage) {
     case "en":
-      gallery = galleryEN;
+      blogs = blogsEN;
       programs = programsEN;
       news = newsEN;
       break;
     case "ar":
-      gallery = galleryAR;
+      blogs = blogsAR;
       programs = programsAR;
       news = newsAR;
       break;
     default:
-      gallery = galleryBN;
+      blogs = blogsBN;
       programs = programsBN;
       news = newsBN;
   }
@@ -198,7 +198,7 @@ export default function Home() {
               <h2>{t("Latest Blogs")}</h2>
             </div>
             <div className={styles.row}>
-              {gallery.slice(0, 3).map((category, index) => (
+              {blogs.slice(0, 3).map((category, index) => (
                 <div key={index} className={styles.wrapper}>
                   <div className={styles.image}>
                     <NextImage src={category.imageUrl} alt={""} />
