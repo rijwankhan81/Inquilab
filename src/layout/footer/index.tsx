@@ -85,23 +85,24 @@ export default function Footer() {
               <div className={styles.connect}>
                 <ul>
                   <li>
-                    <Link href="javascript:void(0)">
+                    <Link
+                      target="_blank"
+                      href="https://www.facebook.com/inqilabmoncho/"
+                    >
                       <FiFacebook />
                     </Link>
                   </li>
                   <li>
-                    <Link href="javascript:void(0)">
+                    <Link
+                      target="_blank"
+                      href="https://www.instagram.com/InqilabMoncho/"
+                    >
                       <FaInstagram />
                     </Link>
                   </li>
                   <li>
-                    <Link href="javascript:void(0)">
+                    <Link target="_blank" href="jhttps://x.com/InqilabMoncho">
                       <FaXTwitter />
-                    </Link>
-                  </li>
-                  <li>
-                    <Link href="javascript:void(0)">
-                      <FaLinkedinIn />
                     </Link>
                   </li>
                 </ul>

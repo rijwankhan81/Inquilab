@@ -20,6 +20,7 @@ import { MdKeyboardArrowRight } from "react-icons/md";
 import categoriesEN from "@/constants/shop/categoriesEN";
 import categoriesAR from "@/constants/shop/categoriesAR";
 import categoriesBN from "@/constants/shop/categoriesBN";
+import { HiShoppingCart } from "react-icons/hi";
 
 interface Product {
   id: number;
@@ -144,14 +145,21 @@ const ProductPage = ({ id }: ProductPageProps) => {
                     <FaBangladeshiTakaSign />
                     {product.price.toFixed(2)} {product.unit}
                   </div>
-                  <div className={styles.qty}>
-                    <button className={styles.minus}>
-                      <FaMinus />
-                    </button>
-                    <input type="number" placeholder="1" />
-                    <button className={styles.plus}>
-                      <TiPlus />
-                    </button>
+                  <div className={styles.cartbtn}>
+                    <div className={styles.qty}>
+                      <button className={styles.minus}>
+                        <FaMinus />
+                      </button>
+                      <input type="number" placeholder="1" />
+                      <button className={styles.plus}>
+                        <TiPlus />
+                      </button>
+                    </div>
+                    <div className={styles.cart}>
+                      <button>
+                        <HiShoppingCart /> Add to cart
+                      </button>
+                    </div>
                   </div>
                 </div>
               </Col>

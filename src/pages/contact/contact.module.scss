@@ -1,0 +1,118 @@
+@use "/src/styles/var" as *;
+
+.banner {
+    padding-top: 120px;
+
+    @media(max-width:$lg) {
+        padding-top: 100px;
+    }
+
+    @media(max-width:$sm) {
+        padding-top: 80px;
+
+    }
+
+    .wrapper {
+        box-shadow: rgba(17, 12, 46, 0.15) 0px 48px 100px 0px;
+        background: linear-gradient(45deg, $primary, #000);
+        border-radius: 20px;
+        padding: 50px;
+        text-align: center;
+
+
+        @media(max-width:$sm) {
+            padding: 30px;
+        }
+
+        h1 {
+            font-weight: 900;
+            color: #fff;
+        }
+
+        p {
+            max-width: 900px;
+            margin: auto;
+            color: #fff;
+        }
+    }
+}
+
+.contact {
+    padding: 40px 0;
+
+    @media(max-width:$sm) {
+        padding: 30px 0;
+    }
+
+    .row {
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
+        gap: 30px;
+        padding-bottom: 30px;
+
+        @media(max-width:$lg) {
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+        }
+
+        @media(max-width:$sm) {
+            grid-template-columns: 1fr;
+        }
+
+
+        .wrapper {
+            box-shadow: rgba(17, 12, 46, 0.15) 0px 48px 100px 0px;
+            overflow: hidden;
+            position: relative;
+            border-radius: 20px;
+            border: 1px solid #ddd;
+            padding: 30px 15px;
+        }
+
+
+        .content {
+            padding-top: 20px;
+            text-align: center;
+
+            h3 {
+                color: #000;
+                font-weight: 700;
+                margin-bottom: 10px;
+                font-size: 20px;
+
+                @media(max-width:$md) {
+                    font-size: 16px;
+                }
+            }
+
+            a {
+                text-decoration: none;
+                color: #8a899d;
+            }
+
+        }
+
+        .icon {
+            width: 70px;
+            height: 70px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: #ffe8e9;
+            margin: auto;
+            border-radius: 10px;
+
+            svg {
+                color: $primary;
+                font-size: 22px;
+            }
+        }
+
+    }
+
+    .map {
+        iframe {
+            width: 100%;
+        }
+    }
+}

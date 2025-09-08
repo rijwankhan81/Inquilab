@@ -24,6 +24,16 @@
     }
 }
 
+.modal {
+    .categories {
+        max-width: 100%;
+
+        @media(max-width:$lg) {
+            display: block;
+        }
+    }
+}
+
 .categories {
     border: 1px solid #ebebeb;
     padding: 25px 20px;
@@ -119,6 +129,18 @@
         justify-content: space-between;
         align-items: center;
         margin-bottom: 20px;
+
+        .catMenu {
+            display: none;
+
+            @media(max-width:$lg) {
+                display: block;
+            }
+
+            svg {
+                font-size: 24px;
+            }
+        }
 
         .chooseLocation {
             border: 1px solid #ebebeb;
@@ -286,8 +308,24 @@
         font-weight: 700;
     }
 
-    .qty {
+    .cartbtn {
         margin-top: 30px;
+        display: flex;
+        align-items: center;
+        gap: 20px;
+
+        .cart {
+            button {
+                border: none;
+                background: $primary;
+                padding: 10px 20px;
+                border-radius: 100px;
+                color: #fff;
+            }
+        }
+    }
+
+    .qty {
         display: flex;
         padding: 10px;
         width: fit-content;

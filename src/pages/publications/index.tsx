@@ -44,7 +44,7 @@ export default function Publication() {
       </Head>
       <Header />
       <main className={styles.page}>
-        <section className={styles.programs}>
+        <section className={styles.publication}>
           <Container className={styles.container}>
             <div className={styles.row}>
               {publications.map((category, index) => (

@@ -1,4 +1,4 @@
-import { Container, Dropdown, Pagination } from "react-bootstrap";
+import { Container, Dropdown, Modal, Pagination } from "react-bootstrap";
 import styles from "./Shop.module.scss";
 import NextImage from "@/hooks/NextImage";
 import Link from "next/link";
@@ -15,8 +15,10 @@ import { useTranslation } from "react-i18next";
 import categoriesAR from "@/constants/shop/categoriesAR";
 import categoriesBN from "@/constants/shop/categoriesBN";
 import categoriesEN from "@/constants/shop/categoriesEN";
+import { CgMenuRight } from "react-icons/cg";
 
 export default function Shop() {
+  const [smShow, setSmShow] = useState(false);
   const [activeTab, setActiveTab] = useState<number | null>(null);
   const [currentPage, setCurrentPage] = useState(1);
   const [sortOrder, setSortOrder] = useState("latest");
@@ -143,6 +145,9 @@ export default function Shop() {
                     </Dropdown.Menu>
                   </Dropdown>
                 </div>
+                <div className={styles.catMenu} onClick={() => setSmShow(true)}>
+                  <CgMenuRight />
+                </div>
                 {/* <div className={styles.chooseLocation}>
                   <input type="search" placeholder="Choose Your Location" />
                   <IoLocationOutline />
@@ -198,6 +203,40 @@ export default function Shop() {
           </div>
         </Container>
       </main>
+      <Modal
+        size="sm"
+        show={smShow}
+        onHide={() => setSmShow(false)}
+        aria-labelledby="example-modal-sizes-title-sm"
+        className={styles.modal}
+      >
+        <div className={styles.categories}>
+          <div className={styles.categoriesHeader}>
+            <FaList /> <h2>Categories</h2>
+          </div>
+          <ul>
+            {categories.map((category) => (
+              <li
+                key={category.id}
+                className={`${styles.category} ${
+                  activeTab === category.id ? styles.active : ""
+                }`}
+                onClick={() => {
+                  handleTabClick(category.id); // switch category
+                  setSmShow(false); // close modal
+                }}
+              >
+                <Link href="#">
+                  <div className={styles.image}>
+                    <NextImage src={category.image} alt={""} />
+                  </div>
+                  <h3 className={styles.name}>{category.name}</h3>
+                </Link>
+              </li>
+            ))}
+          </ul>
+        </div>
+      </Modal>
       <Footer />
     </>
   );

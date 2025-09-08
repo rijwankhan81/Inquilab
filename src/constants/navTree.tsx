@@ -36,7 +36,7 @@ export const navTreeEN: NavItem[] = [
   },
   { id: "publications", title: "Publications", link: "/publications" },
   { id: "blog", title: "Blog", link: "/blogs" },
-  { id: "contact", title: "Contact", link: "/#contact" },
+  { id: "contact", title: "Contact", link: "/contact" },
   // {
   //   id: "shop",
   //   title: "Shop",
@@ -73,7 +73,7 @@ export const navTreeBN: NavItem[] = [
   },
   { id: "publications", title: "প্রকাশনা", link: "/publications" },
   { id: "blog", title: "ব্লগ", link: "/blogs" },
-  { id: "contact", title: "যোগাযোগ", link: "/#contact" },
+  { id: "contact", title: "যোগাযোগ", link: "/contact" },
   // {
   //   id: "shop",
   //   title: "শপ",
@@ -111,7 +111,7 @@ export const navTreeAR: NavItem[] = [
   },
   { id: "publications", title: "الإصدارات", link: "/publications" },
   { id: "blog", title: "المدونة", link: "/blogs" },
-  { id: "contact", title: "اتصل بنا", link: "/#contact" },
+  { id: "contact", title: "اتصل بنا", link: "/contact" },
   // {
   //   id: "shop",
   //   title: "المتجر",

@@ -75,7 +75,7 @@ export default function ProgramDetail({
             {/* ✅ Related Programs Section */}
             {related.length > 0 && (
               <section className={styles.related}>
-                <h2>Other Programs</h2>
+                <h2>{t("Other Programs")}</h2>
                 <div className={styles.row}>
                   {related.map((category, index) => (
                     <div key={index} className={styles.wrapper}>

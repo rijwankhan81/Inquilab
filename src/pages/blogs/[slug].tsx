@@ -78,7 +78,7 @@ export default function BlogDetail({
             {/* ✅ Related blogs Section */}
             {related.length > 0 && (
               <section className={styles.related}>
-                <h2>Other Blogs</h2>
+                <h2>{t("Other Blogs")}</h2>
                 <div className={styles.row}>
                   {related.map((blog, index) => (
                     <div key={index} className={styles.wrapper}>
