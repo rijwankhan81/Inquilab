@@ -51,7 +51,7 @@ export default function BlogDetail({
               <h2>{blog.title}</h2>
 
               <div className={styles.image}>
-                <img src={blog.imageUrl} alt={blog.title} />
+                <NextImage src={blog.imageUrl} alt={blog.title} />
               </div>
               <div className={styles.dateLocation}>
                 {blog.date && (

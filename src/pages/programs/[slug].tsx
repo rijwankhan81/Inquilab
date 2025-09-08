@@ -51,7 +51,7 @@ export default function ProgramDetail({
               <h2>{program.title}</h2>
 
               <div className={styles.image}>
-                <img src={program.imageUrl} alt={program.title} />
+                <NextImage src={program.imageUrl} alt={program.title} />
               </div>
               <div className={styles.dateLocation}>
                 <p>
