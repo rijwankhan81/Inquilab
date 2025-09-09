@@ -14,6 +14,11 @@ export const navTreeEN: NavItem[] = [
     title: "Cultural Center",
     dropdown: true,
     children: [
+      {
+        id: "shop",
+        title: "Shop",
+        link: "/shop",
+      },
       { id: "geetjhalsha", title: "Geet Jhalsha", link: "/#geet-jhalsha" },
       {
         id: "poetryrecital",
@@ -51,6 +56,11 @@ export const navTreeBN: NavItem[] = [
     title: "কালচারাল সেন্টার",
     dropdown: true,
     children: [
+      {
+        id: "shop",
+        title: "শপ",
+        link: "/shop",
+      },
       { id: "geetjhalsha", title: "গীত ঝলসা", link: "/#geet-jhalsha" },
       {
         id: "poetryrecital",
@@ -89,6 +99,11 @@ export const navTreeAR: NavItem[] = [
     title: "المركز الثقافي",
     dropdown: true,
     children: [
+      {
+        id: "shop",
+        title: "المتجر",
+        link: "/shop",
+      },
       { id: "geetjhalsha", title: "أمسية غنائية", link: "/#geet-jhalsha" },
       {
         id: "poetryrecital",
